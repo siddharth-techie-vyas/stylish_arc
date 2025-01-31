@@ -9,3 +9,4 @@
 <a href="https://viesearch.com/">Viesearch - The Human-curated Search Engine</a>
 <a href="https://www.promotebusinessdirectory.com/">Directory Website Promote</a>
 <a href="https://www.britainbusinessdirectory.com/computers_and_internet/">UK business Marketing</a>
+<a href="http://www.ukinternetdirectory.net/arts_humanities/artists/">http://www.ukinternetdirectory.net/arts_humanities/artists/</a>

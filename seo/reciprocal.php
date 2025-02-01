@@ -18,3 +18,4 @@
 <a href="http://www.cubawebdirectory.com">Cuba Web Directory</a> .....s more than a thousand links on Cuba just a click away
 <a href="https://www.textlinkdirectory.com" >Text Link Directory</a>
 <a href="http://www.canadawebdir.com/shopping/home_and_garden/">home_and_garden com</a>
+<a href="http://www.marketingwebdirectory.com/index.php?list=latest">Sites Directory</a>

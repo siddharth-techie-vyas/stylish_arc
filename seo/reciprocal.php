@@ -1,4 +1,4 @@
-<h6><a href="https://www.usalistingdirectory.com/index.php?list=top">Free Online Directory</a>
+<font size= "1"><a href="https://www.usalistingdirectory.com/index.php?list=top">Free Online Directory</a>
 <a href="https://www.usalistingdirectory.com/index.php?list=top">Free Online Directory</a>
 <a href="https://www.usalistingdirectory.com/index.php?list=top">Free Online Directory</a>
 <a href="https://www.usalistingdirectory.com/index.php?list=top">Free Online Directory</a>
@@ -21,4 +21,4 @@
 <a href="http://www.marketingwebdirectory.com/index.php?list=latest">Sites Directory</a>
 <a href="http://www.txtlinks.com">Free Links Directory</a>
 
-</h6>
+</font>

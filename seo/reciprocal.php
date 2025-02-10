@@ -23,6 +23,6 @@
 <a href="http://anaximanderdirectory.com/">Anaximander Directory</a>
 <a href="http://www.unique-listing.com/">Unique Listing.com</a>
 <a href="http://www.relevantdirectories.com/">Relevant Directories.com</a>
-
+<a href="http://www.websquash.com">Free Web Submission</a>
 
 </font>

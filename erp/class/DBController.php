@@ -15,7 +15,7 @@ class DBController {
     
    function __construct() {
         $this->conn = $this->connectDB();
-        error_reporting(0);
+        //error_reporting(0);
     }   
     
     function default_timezone()

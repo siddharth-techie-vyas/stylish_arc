@@ -9,9 +9,7 @@ $conn= new DBController();
 //-- class calls
 $product = new Inventory();
 $admin = new Admin();
-//login confirmation
-//confirm_home();
-$action=$_GET['action']; 
+
 
 
 
@@ -19,11 +17,22 @@ $action=$_GET['action'];
 $company=$admin->get_company();
 
 
+//login confirmation
+//confirm_home();
 
-if(empty($action))
-{$_GET['action']="dashboard";
+
+if(isset($_GET['action']))
+{$action=$_GET['action']; }
+else
+{   
+    
+    $_GET['action']="dashboard";
+    $_GET['page']="home";
     $action=$_GET['action'];
+
 }
+
+
 
 include('case.php');
 ?>

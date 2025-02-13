@@ -30,7 +30,7 @@ case "dashboard":
  					
  					require_once("web/footer.php");
  				}
- 			
+				 
  		}
  		break;
 //--- dashboard closed

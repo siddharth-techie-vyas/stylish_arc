@@ -7,7 +7,7 @@ class DBController {
     // private $conn;
 
     private $host = "localhost";
-    private $user = "u667746222_stylish_arc_user";
+    private $user = "u667746222_stylish_arc_us";
     private $password = "Arc@#0291";
     private $database = "u667746222_stylish_arc_db";
     private $conn;

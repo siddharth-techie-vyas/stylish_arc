@@ -1,0 +1,9 @@
+
+theme/assets/images
+
+*.log
+theme_all/
+assets/images
+
+erp/theme/assets/images
+erp/theme/copy/

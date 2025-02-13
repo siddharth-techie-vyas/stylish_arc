@@ -1,9 +1,15 @@
 <?php
 class DBController {
+    // private $host = "localhost";
+    // private $user = "root";
+    // private $password = "";
+    // private $database = "stylisharc";
+    // private $conn;
+
     private $host = "localhost";
-    private $user = "root";
-    private $password = "";
-    private $database = "stylisharc";
+    private $user = "u667746222_stylish_arc_user";
+    private $password = "Arc@#0291";
+    private $database = "u667746222_stylish_arc_db";
     private $conn;
 	
     

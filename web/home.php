@@ -4,76 +4,26 @@
                 data-centered="false" data-space="20" data-space-mb="0" data-loop="false" data-auto-play="false"
                 data-pagination="1" data-pagination-md="2" data-pagination-lg="2">
                 <div class="swiper-wrapper">
+                   <!-------- slides ------->
+                   <?php $slider=$admin->get_website_config('slider');
+                   foreach($slider as $row=>$v){?>
+                
                     <div class="swiper-slide">
                         <div class="wrap-slider slide-1">
                             <div class="img-style">
-                                <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>slider/slider-1.jpg"
+                                <img class="lazyload" data-src="<?php echo $base_url.'assets/images/'.$slider[$row]['value1'];?>"
                                     src="<?php echo $base_url.'assets/images/';?>slider/slider-1.jpg" alt="banner-cls">
                             </div>
                             <div class="box-content">
                                 <div class="box-title">
-                                    <h1 class="text-white">Ergonomic Duo Bundle</h1>
-                                    <p class="text-body-1 text-white">Get superior support and better posture with
-                                        ergonomic
-                                        chairs for long <br> work hours</p>
+                                    <h1 class="text-white"><?php echo $slider[$row]['value2'];?></h1>
+                                    <p class="text-body-1 text-white"><?php echo $slider[$row]['value3'];?></p>
                                 </div>
-                                <a href="shop-default.html" class="tf-btn btn-white ">Explore Collection <i class="icon-arrow-up-right"></i></a>
+                                <a href="<?php echo $slider[$row]['value4'];?>" class="tf-btn btn-white ">Explore Collection <i class="icon-arrow-up-right"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="wrap-slider slide-2">
-                            <div class="img-style">
-                                <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>slider/slider-2.jpg"
-                                    src="<?php echo $base_url.'assets/images/';?>slider/slider-2.jpg" alt="banner-cls">
-                            </div>
-                            <div class="box-content">
-                                <div class="box-title">
-                                    <h1 class="text-white">Wireless Charging Dock</h1>
-                                    <p class="text-body-1 text-white">Get superior support and better posture with
-                                        ergonomic
-                                        chairs for long <br> work hours</p>
-                                </div>
-                                <a href="shop-default.html" class="tf-btn btn-white ">Explore Collection <i class="icon-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="wrap-slider slide-3">
-                            <div class="img-style">
-                                <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>slider/slider-3.jpg"
-                                    src="<?php echo $base_url.'assets/images/';?>slider/slider-3.jpg" alt="banner-cls">
-                            </div>
-                            <div class="box-content">
-                                <div class="box-title">
-                                    <h1 class="text-white">Ergonomic Chair Pro</h1>
-                                    <p class="text-body-1 text-white">Get superior support and better posture with
-                                        ergonomic
-                                        chairs for long <br> work hours</p>
-                                </div>
-                                <a href="shop-default.html" class="tf-btn btn-white ">Explore
-                                    Collection <i class="icon-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="wrap-slider slide-1">
-                            <div class="img-style">
-                                <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>slider/slider-1.jpg"
-                                    src="<?php echo $base_url.'assets/images/';?>slider/slider-1.jpg" alt="banner-cls">
-                            </div>
-                            <div class="box-content">
-                                <div class="box-title">
-                                    <h1 class="text-white">Ergonomic Duo Bundle</h1>
-                                    <p class="text-body-1 text-white">Get superior support and better posture with
-                                        ergonomic
-                                        chairs for long <br> work hours</p>
-                                </div>
-                                <a href="shop-default.html" class="tf-btn btn-white ">Explore
-                                    Collection <i class="icon-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                   <?php }?>
                 </div>
                 <div class="wrap-pagination">
                     <div class="container">
@@ -93,50 +43,21 @@
                     <div class="col-10">
                         <div class="text-center flat-spacing pt-0 line-bottom-container">
                             <div class="wrap-categories mb_28">
-                                <h3 class="categories-item style-3 hover-cursor-img">
-                                    <a href="shop-default.html" class="link">Desks Wood</a>
+                                <?php 
+                                $cat_sugg=$product->get_category_all();
+                                foreach($cat_sugg as $row1=>$v){
+                                
+                                ?>
+                                <h4 class="categories-item style-3 hover-cursor-img">
+                                    <a href="#" class="link"><?php echo $cat_sugg[$row1]['cat'];?></a>
                                     <span class="hover-image">
-                                        <img src="<?php echo $base_url.'assets/images/';?>section/collections-banner.jpg" alt="Hover Image">
+                                        <img src="<?php echo $base_url.'assets/images/'.$cat_sugg[$row1]['image'];?>" alt="<?php echo $cat_sugg[$row1]['cat'];?>">
                                     </span>
-                                </h3>
-                                <h3 class="categories-item style-3 hover-cursor-img">
-                                    <a href="shop-default.html" class="link">Storage Solutions</a>
-                                    <span class="hover-image">
-                                        <img src="<?php echo $base_url.'assets/images/';?>section/collections-banner-1.jpg" alt="Hover Image">
-                                    </span>
-                                </h3>
-                                <h3 class="categories-item style-3 hover-cursor-img">
-                                    <a href="shop-default.html" class="link">Conference</a>
-                                    <span class="hover-image">
-                                        <img src="<?php echo $base_url.'assets/images/';?>section/collections-banner-2.jpg" alt="Hover Image">
-                                    </span>
-                                </h3>
-                                <h3 class="categories-item style-3 hover-cursor-img">
-                                    <a href="shop-default.html" class="link">Office Chairs</a>
-                                    <span class="hover-image">
-                                        <img src="<?php echo $base_url.'assets/images/';?>section/categories-1.jpg" alt="Hover Image">
-                                    </span>
-                                </h3>
-                                <h3 class="categories-item style-3 hover-cursor-img">
-                                    <a href="shop-default.html" class="link">Decor Office</a>
-                                    <span class="hover-image">
-                                        <img src="<?php echo $base_url.'assets/images/';?>section/categories-2.jpg" alt="Hover Image">
-                                    </span>
-                                </h3>
-                                <h3 class="categories-item style-3 hover-cursor-img">
-                                    <a href="shop-default.html" class="link">Accessories</a>
-                                    <span class="hover-image">
-                                        <img src="<?php echo $base_url.'assets/images/';?>section/categories-3.jpg" alt="Hover Image">
-                                    </span>
-                                </h3>
-                                <h3 class="categories-item style-3 hover-cursor-img">
-                                    <a href="shop-default.html" class="link">Lighting</a>
-                                    <span class="hover-image">
-                                        <img src="<?php echo $base_url.'assets/images/';?>section/categories-4.jpg" alt="Hover Image">
-                                    </span>
-                                </h3>
+                                </h4>
+                                <?php }?>
+                                
                             </div>
-                            <a href="shop-default.html" class="btn-line"><span>View All Categiories</span></a>
+                            <a href="#" class="btn-line"><span>View All Categiories</span></a>
                         </div>
                     </div>
                 </div>
@@ -153,13 +74,18 @@
                             <p class="text-body-default text_secondary wow fadeInUp" data-wow-delay="0.1s">Fresh styles just in! Elevate your look.</p>
                         </div>
                         <div class="tf-grid-layout tf-col-2 lg-col-4 ">
+
+                        <?php $random_pro=$admin->get_random_product();
+                        if($random_pro){
+                        foreach($random_pro as $row2=>$v){                           
+                        ?>
                             <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>shop/product-1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-1.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>shop/product-1.1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-1.1.jpg" alt="image-product">
+                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>"
+                                            src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row1]['product_name'];?>">
+                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>"
+                                            src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row1]['product_name'];?>">
                                     </a>
                                     <div class="list-product-btn">
                                         <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
@@ -183,9 +109,9 @@
                                     </div>
                                 </div>
                                 <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link">Ergonomic Chair Pro</a>
-                                    <div class="price text-body-default ">$79.99</div>
-                                    <ul class="list-color-product">
+                                    <a href="product-detail.html" class=" text-title title link"><?php echo $random_pro[$row1]['product_name'];?></a>
+                                    <div class="price text-body-default "><?php echo $random_pro[$row1]['usd'];?></div>
+                                    <!-- <ul class="list-color-product">
                                         <li class="list-color-item color-swatch active">
                                             <span class="d-none text-capitalize color-filter">Light Blue</span>
                                             <span class="swatch-value bg-light-blue"></span>
@@ -198,374 +124,11 @@
                                             <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-1.3.jpg"
                                                 src="<?php echo $base_url.'assets/images/';?>shop/product-1.3.jpg" alt="image-product">
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
-                            <div class="card-product style-1 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>shop/product-2.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-2.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>shop/product-2.1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-2.1.jpg" alt="image-product">
-                                    </a>
-                                    <div class="on-sale-wrap"><span class="on-sale-item">-25%</span>
-                                    </div>
-                                    <div class="list-product-btn">
-                                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
-                                            <span class="icon icon-heart"></span>
-                                            <span class="tooltip">Wishlist</span>
-                                        </a>
-                                        <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                            class="box-icon compare ">
-                                            <span class="icon icon-compare"></span>
-                                            <span class="tooltip">Compare</span>
-                                        </a>
-                                        <a href="#quickView" data-bs-toggle="modal"
-                                            class="box-icon quickview tf-btn-loading">
-                                            <span class="icon icon-eye"></span>
-                                            <span class="tooltip">Quick View</span>
-                                        </a>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
-                                            cart</a>
-                                    </div>
-                                </div>
-                                <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link">Open Box - Adjustable
-                                        Laptop Stand</a>
-                                    <div class="price text-body-default "><span
-                                            class="text-caption-1 old-price">$98.00</span>$79.99</div>
-                                    <ul class="list-color-product">
-                                        <li class="list-color-item color-swatch active">
-                                            <span class="d-none text-capitalize color-filter">Light Blue</span>
-                                            <span class="swatch-value bg-light-blue"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-2.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Blue</span>
-                                            <span class="swatch-value bg-light-blue-2"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-2.2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-2.2.jpg" alt="image-product">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-product style-1 wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>shop/product-3.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-3.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>shop/product-3.1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-3.1.jpg" alt="image-product">
-                                    </a>
-                                    <div class="on-sale-wrap"><span class="on-sale-item">-25%</span>
-                                    </div>
-                                    <div class="list-product-btn">
-                                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
-                                            <span class="icon icon-heart"></span>
-                                            <span class="tooltip">Wishlist</span>
-                                        </a>
-                                        <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                            class="box-icon compare ">
-                                            <span class="icon icon-compare"></span>
-                                            <span class="tooltip">Compare</span>
-                                        </a>
-                                        <a href="#quickView" data-bs-toggle="modal"
-                                            class="box-icon quickview tf-btn-loading">
-                                            <span class="icon icon-eye"></span>
-                                            <span class="tooltip">Quick View</span>
-                                        </a>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
-                                            cart</a>
-                                    </div>
-                                </div>
-                                <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link">Laptop Stand</a>
-                                    <div class="price text-body-default "><span
-                                            class="text-caption-1 old-price">$98.00</span>$89.99</div>
-                                    <ul class="list-color-product">
-                                        <li class="list-color-item color-swatch active">
-                                            <span class="d-none text-capitalize color-filter">Light Orange</span>
-                                            <span class="swatch-value bg-light-orange"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-3.2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-3.2.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Grey</span>
-                                            <span class="swatch-value bg-light-grey"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-3.3.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-3.3.jpg" alt="image-product">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-product style-1 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>shop/product-4.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-4.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>shop/product-4.1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-4.1.jpg" alt="image-product">
-                                    </a>
-                                    <div class="list-product-btn">
-                                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
-                                            <span class="icon icon-heart"></span>
-                                            <span class="tooltip">Wishlist</span>
-                                        </a>
-                                        <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                            class="box-icon compare ">
-                                            <span class="icon icon-compare"></span>
-                                            <span class="tooltip">Compare</span>
-                                        </a>
-                                        <a href="#quickView" data-bs-toggle="modal"
-                                            class="box-icon quickview tf-btn-loading">
-                                            <span class="icon icon-eye"></span>
-                                            <span class="tooltip">Quick View</span>
-                                        </a>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
-                                            cart</a>
-                                    </div>
-                                </div>
-                                <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link">Double Standing
-                                        Desk</a>
-                                    <div class="price text-body-default ">$69.99</div>
-                                    <ul class="list-color-product">
-                                        <li class="list-color-item color-swatch active">
-                                            <span class="d-none text-capitalize color-filter">Light Brown</span>
-                                            <span class="swatch-value bg-light-brown"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-4.2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-4.2.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Bink</span>
-                                            <span class="swatch-value bg-light-pink"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-4.3.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-4.3.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Grey</span>
-                                            <span class="swatch-value bg-dark-grey-2"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-4.4.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-4.4.jpg" alt="image-product">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>shop/product-5.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-5.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>shop/product-5.1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-5.1.jpg" alt="image-product">
-                                    </a>
-                                    <div class="on-sale-wrap"><span class="on-sale-item">-25%</span>
-                                    </div>
-                                    <div class="list-product-btn">
-                                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
-                                            <span class="icon icon-heart"></span>
-                                            <span class="tooltip">Wishlist</span>
-                                        </a>
-                                        <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                            class="box-icon compare ">
-                                            <span class="icon icon-compare"></span>
-                                            <span class="tooltip">Compare</span>
-                                        </a>
-                                        <a href="#quickView" data-bs-toggle="modal"
-                                            class="box-icon quickview tf-btn-loading">
-                                            <span class="icon icon-eye"></span>
-                                            <span class="tooltip">Quick View</span>
-                                        </a>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
-                                            cart</a>
-                                    </div>
-                                </div>
-                                <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link">Wireless Charging
-                                        Dock</a>
-                                    <div class="price text-body-default "><span
-                                            class="text-caption-1 old-price">$98.00</span>$89.99</div>
-                                    <ul class="list-color-product">
-                                        <li class="list-color-item color-swatch active">
-                                            <span class="d-none text-capitalize color-filter">Light Orange</span>
-                                            <span class="swatch-value bg-light-orange"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-5.2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-5.2.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Grey</span>
-                                            <span class="swatch-value bg-light-grey"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-5.3.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-5.3.jpg" alt="image-product">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-product style-1 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>shop/product-6.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-6.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>shop/product-6.1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-6.1.jpg" alt="image-product">
-                                    </a>
-                                    <div class="list-product-btn">
-                                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
-                                            <span class="icon icon-heart"></span>
-                                            <span class="tooltip">Wishlist</span>
-                                        </a>
-                                        <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                            class="box-icon compare ">
-                                            <span class="icon icon-compare"></span>
-                                            <span class="tooltip">Compare</span>
-                                        </a>
-                                        <a href="#quickView" data-bs-toggle="modal"
-                                            class="box-icon quickview tf-btn-loading">
-                                            <span class="icon icon-eye"></span>
-                                            <span class="tooltip">Quick View</span>
-                                        </a>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
-                                            cart</a>
-                                    </div>
-                                </div>
-                                <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link">Ergonomic Headrest</a>
-                                    <div class="price text-body-default ">$79.99</div>
-                                    <ul class="list-color-product">
-                                        <li class="list-color-item color-swatch active">
-                                            <span class="d-none text-capitalize color-filter">Light Blue</span>
-                                            <span class="swatch-value bg-light-blue"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-6.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-6.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Blue</span>
-                                            <span class="swatch-value bg-light-blue-2"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-6.2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-6.2.jpg" alt="image-product">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-product style-1 wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>shop/product-7.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-7.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>shop/product-7.1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-7.1.jpg" alt="image-product">
-                                    </a>
-                                    <div class="on-sale-wrap"><span class="on-sale-item">-25%</span>
-                                    </div>
-                                    <div class="list-product-btn">
-                                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
-                                            <span class="icon icon-heart"></span>
-                                            <span class="tooltip">Wishlist</span>
-                                        </a>
-                                        <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                            class="box-icon compare ">
-                                            <span class="icon icon-compare"></span>
-                                            <span class="tooltip">Compare</span>
-                                        </a>
-                                        <a href="#quickView" data-bs-toggle="modal"
-                                            class="box-icon quickview tf-btn-loading">
-                                            <span class="icon icon-eye"></span>
-                                            <span class="tooltip">Quick View</span>
-                                        </a>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
-                                            cart</a>
-                                    </div>
-                                </div>
-                                <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link">Hybrid Laptop
-                                        Sleeve</a>
-                                    <div class="price text-body-default "><span
-                                            class="text-caption-1 old-price">$98.00</span>$79.99</div>
-                                    <ul class="list-color-product">
-                                        <li class="list-color-item color-swatch active">
-                                            <span class="d-none text-capitalize color-filter">Light Blue</span>
-                                            <span class="swatch-value bg-light-blue"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-7.2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-7.2.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Blue</span>
-                                            <span class="swatch-value bg-light-blue-2"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-7.3.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-7.3.jpg" alt="image-product">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-product style-1 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>shop/product-8.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-8.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>shop/product-8.1.jpg"
-                                            src="<?php echo $base_url.'assets/images/';?>shop/product-8.1.jpg" alt="image-product">
-                                    </a>
-                                    <div class="list-product-btn">
-                                        <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
-                                            <span class="icon icon-heart"></span>
-                                            <span class="tooltip">Wishlist</span>
-                                        </a>
-                                        <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                            class="box-icon compare ">
-                                            <span class="icon icon-compare"></span>
-                                            <span class="tooltip">Compare</span>
-                                        </a>
-                                        <a href="#quickView" data-bs-toggle="modal"
-                                            class="box-icon quickview tf-btn-loading">
-                                            <span class="icon icon-eye"></span>
-                                            <span class="tooltip">Quick View</span>
-                                        </a>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
-                                            cart</a>
-                                    </div>
-                                </div>
-                                <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link">Wireless Charging
-                                        Tray</a>
-                                    <div class="price text-body-default ">$69.99</div>
-                                    <ul class="list-color-product">
-                                        <li class="list-color-item color-swatch active">
-                                            <span class="d-none text-capitalize color-filter">Light Brown</span>
-                                            <span class="swatch-value bg-light-brown"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-8.2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-8.2.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Bink</span>
-                                            <span class="swatch-value bg-light-pink"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-8.3.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-8.3.jpg" alt="image-product">
-                                        </li>
-                                        <li class="list-color-item color-swatch">
-                                            <span class="d-none text-capitalize color-filter">Light Grey</span>
-                                            <span class="swatch-value bg-dark-grey-2"></span>
-                                            <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-8.4.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>shop/product-8.4.jpg" alt="image-product">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <?php }}else{echo "<h5>No Products Found</h5>";}?>    
+                            
                         </div>
                     </div>
                 </div>
@@ -848,7 +411,7 @@
                                 <p class="text-body-default text_secondary wow fadeInUp" data-wow-delay="0s">Fresh styles just in! Elevate your look.</p>
                             </div>
                             <div class="right wow fadeInUp">
-                                <a href="shop-default.html" class="btn-line">
+                                <a href="#" class="btn-line">
                                     <span>View All Products</span></a>
                             </div>
                         </div>
@@ -1230,7 +793,7 @@
                                     </li>
                                 </ul>
                                 <div class="wow fadeInUp">
-                                    <a href="shop-default.html" class="btn-line">
+                                    <a href="#" class="btn-line">
                                         <span>Explore The Full Lookbook
                                         </span>
                                     </a>
@@ -1248,10 +811,10 @@
                                             <div class="content cls-content">
                                                 <div class="cls-heading">
                                                     <p class="text_white">Lookbook Collections</p>
-                                                    <h3 class=""> <a href="shop-default.html" class="link text_white">Modern Minimalist
+                                                    <h3 class=""> <a href="#" class="link text_white">Modern Minimalist
                                                             Collection</a></h3>
                                                 </div>
-                                                <a href="shop-default.html" class="tf-btn btn-white  mx-auto">Explore
+                                                <a href="#" class="tf-btn btn-white  mx-auto">Explore
                                                     Collection <i class="icon-arrow-up-right"></i></a>
                                             </div>
                                         </div>
@@ -1266,10 +829,10 @@
                                             <div class="content cls-content">
                                                 <div class="cls-heading">
                                                     <p class="text_white">Lookbook Collections</p>
-                                                    <h3 class=""> <a href="shop-default.html" class="link text_white">Modern Minimalist
+                                                    <h3 class=""> <a href="#" class="link text_white">Modern Minimalist
                                                             Collection</a></h3>
                                                 </div>
-                                                <a href="shop-default.html" class="tf-btn btn-white mx-auto">Explore
+                                                <a href="#" class="tf-btn btn-white mx-auto">Explore
                                                     Collection <i class="icon-arrow-up-right"></i></a>
                                             </div>
                                         </div>
@@ -1284,10 +847,10 @@
                                             <div class="content cls-content">
                                                 <div class="cls-heading">
                                                     <p class="text_white">Lookbook Collections</p>
-                                                    <h3 class=""> <a href="shop-default.html" class="link text_white">Modern Minimalist
+                                                    <h3 class=""> <a href="#" class="link text_white">Modern Minimalist
                                                             Collection</a></h3>
                                                 </div>
-                                                <a href="shop-default.html" class="tf-btn btn-white  mx-auto">Explore
+                                                <a href="#" class="tf-btn btn-white  mx-auto">Explore
                                                     Collection <i class="icon-arrow-up-right"></i></a>
                                             </div>
                                         </div>

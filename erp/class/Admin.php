@@ -14,10 +14,15 @@ class Admin {
 		$a=$pic;
 		$filename = $a['name'];
 		$tempname = $a["tmp_name"];
-		$folder = "./theme/assets/images/" . $filename;
+		
+        //-- rename file
+        $temp = explode(".", $filename);
+        $newfilename = round(microtime(true)) . '.' . end($temp);
+        $folder = "././theme/assets/images/". $newfilename;
+
 
 		if (move_uploaded_file($tempname, $folder)) {
-			return $filename;
+			return $newfilename;
 		} else {
 			return 0;
 		}
@@ -195,6 +200,22 @@ function update_company($cname,$acnu,$acbank,$ifsc,$bank_address,$iec,$vriksh,$v
     return $result;
 }
 
+//========= website config
+function get_website_config($ctype)
+{
+    $query = "select * from website_config where ctype='$ctype'";
+    $result = $this->db_handle->runBaseQuery($query);
+    return $result;
+}
 
+function get_random_product()
+{
+    $query = "select * from products ORDER by RAND() LIMIT 8";
+    $result = $this->db_handle->runBaseQuery($query);
+    return $result;
+}
+
+
+//===========class end 
 }
 

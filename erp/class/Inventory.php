@@ -161,7 +161,7 @@ private $db_handle;
 
     function get_category_all()
     {
-        $sql = "SELECT DISTINCT(cat),id FROM product_category where cat NOT REGEXP '^[0-9]+$' AND collection='0' ORDER BY cat ASC ";
+        $sql = "SELECT DISTINCT(cat),id,image FROM product_category where cat NOT REGEXP '^[0-9]+$' AND collection='0' ORDER BY cat ASC ";
         $result = $this->db_handle->runBaseQuery($sql);
         return $result;
     }

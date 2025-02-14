@@ -28,7 +28,7 @@
 					    <div class="app-card app-card-stat shadow-sm h-100">
 						    <div class="app-card-body p-3 p-lg-4">
 							    <h4 class="stats-type mb-1">Total Product(s)</h4>
-							    <div class="stats-figure"><?php $cp=$product->getall(); echo COUNT($cp); ?></div>
+							    <div class="stats-figure"><?php $cp=$product->getall(); if($cp){echo COUNT($cp);} ?></div>
 							    
 						    </div>
 						    <a class="app-card-link-mask" href="#"></a>
@@ -49,7 +49,7 @@
 					    <div class="app-card app-card-stat shadow-sm h-100">
 						    <div class="app-card-body p-3 p-lg-4">
 							    <h4 class="stats-type mb-1">Sale(s)</h4>
-							    <div class="stats-figure"><?php $co=$order->view_all_order(); echo COUNT($co); ?></div>
+							    <div class="stats-figure"><?php $co=$order->view_all_order(); if($c0){echo COUNT($co);} ?></div>
 							    <div class="stats-meta"></div>
 						    </div>
 						    <a class="app-card-link-mask" href="#"></a>
@@ -59,7 +59,7 @@
 					    <div class="app-card app-card-stat shadow-sm h-100">
 						    <div class="app-card-body p-3 p-lg-4">
 							    <h4 class="stats-type mb-1">PO(s)</h4>
-							    <div class="stats-figure"><?php $cpo=$order->viewall_po(); echo COUNT($cpo); ?></div>
+							    <div class="stats-figure"><?php $cpo=$order->viewall_po(); if($cp0){echo COUNT($cpo);} ?></div>
 						    </div>
 						    <a class="app-card-link-mask" href="#"></a>
 					    </div>
@@ -71,7 +71,7 @@
 					    <div class="app-card app-card-stat shadow-sm h-100">
 						    <div class="app-card-body p-3 p-lg-4">
 							    <h4 class="stats-type mb-1">Total User(s)</h4>
-							    <div class="stats-figure"><?php $cu=$admin->get_alluser(); echo COUNT($cu); ?></div>
+							    <div class="stats-figure"><?php $cu=$admin->get_alluser(); if($cu){echo COUNT($cu);} ?></div>
 							    
 						    </div>
 						    <a class="app-card-link-mask" href="#"></a>
@@ -82,7 +82,7 @@
 					    <div class="app-card app-card-stat shadow-sm h-100">
 						    <div class="app-card-body p-3 p-lg-4">
 							    <h4 class="stats-type mb-1">Total Beneficiery(s)</h4>
-							    <div class="stats-figure"><?php $cb=$accounts->getall_beneficiery(); echo COUNT($cb);?></div>
+							    <div class="stats-figure"><?php $cb=$accounts->getall_beneficiery(); if($cb){echo COUNT($cb);}?></div>
 							    
 						    </div>
 						    <a class="app-card-link-mask" href="#"></a>
@@ -92,7 +92,7 @@
 					    <div class="app-card app-card-stat shadow-sm h-100">
 						    <div class="app-card-body p-3 p-lg-4">
 							    <h4 class="stats-type mb-1">Total Debtor(s)</h4>
-							    <div class="stats-figure"><?php $cd=$accounts->getall_beneficiery_sametype('10'); echo COUNT($cd); ?></div>
+							    <div class="stats-figure"><?php $cd=$accounts->getall_beneficiery_sametype('10'); if($cd){echo COUNT($cd);} ?></div>
 							    <div class="stats-meta"></div>
 						    </div>
 						    <a class="app-card-link-mask" href="#"></a>

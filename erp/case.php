@@ -81,6 +81,18 @@ case "product":
 			{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-product&status=2';</script>";}
 			}
 
+			if($_GET['query']=='add-new-collection')
+			{
+				echo "called";
+				$picture=$admin->upload_image($_FILES['picture']);	
+				$get = $product->create_collection($picture, $_POST['collection_name']);
+			
+			if($get)
+			{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-collection&status=1&id=".$get."';</script>";}   
+			else
+			{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-product&status=2';</script>";}
+			}
+
 			if($_GET['query']=='add-cartoon')
 			{
 				$get = $product->add_details($_POST['pid'],$_POST['material'],$_POST['clength'],$_POST['cwidth'],$_POST['cheight'],$_POST['cbm'],$_POST['weight_cartoon'],$_POST['weight_plastic'],$_POST['weight_wood'],$_POST['weight_iron'],$_POST['net_weight'],$_POST['gross_weight']);

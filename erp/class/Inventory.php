@@ -8,7 +8,26 @@ private $db_handle;
     function __construct() {
         $this->db_handle = new DBController();
     }
-	
+
+    //========== collection
+    function create_collection($picture, $collection_name)
+    {
+        $query = "INSERT INTO collection(collection_name,image)VALUES (?,?)";
+        $paramType = "ss";
+        $paramValue = array($collection_name, $picture);
+        $result=$this->db_handle->insert($query, $paramType, $paramValue);
+        return $result;
+    }
+
+
+    function get_all_collection()
+    {
+        $query = "SELECT * FROM collection";
+        $result=$this->db_handle->runBaseQuery($query);
+        return $result;
+    }
+    //----------products
+
 	function save($picture, $buyer_code, $sku_code, $shipping_mark, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $case_number, $fob, $usd, $pcs_cartoon, $cartoon_per_pcs, $l_shape)
     {
 

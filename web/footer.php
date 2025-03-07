@@ -14,45 +14,41 @@
                                             <i class="icon-headset"></i>
                                         </div>
                                         <div class="conter">
-                                            <p class="text-body-default">24/7 Support Center:</p>
-                                            <h5>(+01) 1234 8888</h5>
+                                            <p class="text-body-default">Support Center:</p>
+                                            <h5><?php echo $company[0]['phone'];?></h5>
+                                            
                                         </div>
                                     </div>
                                     <div class="footer-info">
-                                        <p class="text-body-default ">Address: 1234 Fashion Street, Suite 567, New York,
-                                            United States</p>
-                                        <div class="footer-email">Email:<a href="#">example@example.com</a></div>
+                                        <p class="text-body-default ">Address: <?php echo $company[0]['address'];?></p>
+                                        <div class="footer-email">Email:<a href="#"><?php echo $company[0]['email'];?></a></div>
                                     </div>
-                                    <a href="contact.html" class="tf-btn-direction link text-caption-1"><span>Get
-                                            Direction</span><i class="icon-arrow-up-right"></i></a>
+                                   
                                 </div>
                             </div>
                             <div class="col-xl-5 col-lg-4">
                                 <div class="footer-menu">
                                     <div class="footer-col-block">
                                         <h6 class="footer-heading  footer-heading-mobile">
-                                            Infomation
+                                            Quick Links
                                         </h6>
                                         <div class="tf-collapse-content">
                                             <ul class="footer-menu-list">
                                                 <li class="text-body-default">
-                                                    <a href="about.html" class=" link footer-menu_item">About Us</a>
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=about-us';?>" class=" link footer-menu_item">About Us</a>
                                                 </li>
                                                 <li class="text-body-default">
-                                                    <a href="store-list.html" class=" link footer-menu_item">Our
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=about-us';?>" class=" link footer-menu_item">Our
                                                         Stories</a>
                                                 </li>
                                                 <li class="text-body-default">
-                                                    <a href="#" class=" link footer-menu_item">Size Guide</a>
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=contact-us';?>" class=" link footer-menu_item">Contact us</a>
                                                 </li>
                                                 <li class="text-body-default">
-                                                    <a href="contact.html" class=" link footer-menu_item">Contact us</a>
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=career';?>" class=" link footer-menu_item">Career</a>
                                                 </li>
                                                 <li class="text-body-default">
-                                                    <a href="#" class=" link footer-menu_item">Career</a>
-                                                </li>
-                                                <li class="text-body-default">
-                                                    <a href="my-account.html" class=" link footer-menu_item">My
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=customer-login';?>" class=" link footer-menu_item">My
                                                         Account</a>
                                                 </li>
                                             </ul>
@@ -65,26 +61,23 @@
                                         <div class="tf-collapse-content">
                                             <ul class="footer-menu-list">
                                                 <li class="text-body-default">
-                                                    <a href="#" class=" link footer-menu_item">Shipping</a>
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=shipping-policy';?>" class=" link footer-menu_item">Shipping</a>
                                                 </li>
                                                 <li class="text-body-default">
-                                                    <a href="#" class=" link footer-menu_item">Return &amp; Refund</a>
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=return-policy';?>" class=" link footer-menu_item">Return &amp; Refund</a>
                                                 </li>
                                                 <li class="text-body-default">
-                                                    <a href="#" class=" link footer-menu_item">Privacy Policy</a>
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=privacy-policy';?>" class=" link footer-menu_item">Privacy Policy</a>
                                                 </li>
                                                 <li class="text-body-default">
-                                                    <a href="term-of-use.html" class=" link footer-menu_item">Terms
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=terms-and-conditions';?>" class=" link footer-menu_item">Terms
                                                         &amp;
                                                         Conditions</a>
                                                 </li>
                                                 <li class="text-body-default">
-                                                    <a href="FAQs_5963853.html" class=" link footer-menu_item">Orders FAQs</a>
+                                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=faq';?>" class=" link footer-menu_item">FAQs</a>
                                                 </li>
-                                                <li class="text-body-default">
-                                                    <a href="wish-list.html" class=" link footer-menu_item">My
-                                                        Wishlist</a>
-                                                </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -93,7 +86,7 @@
                             <div class="col-xl-4 col-lg-4">
                                 <div class="footer-col-block footer-newsletter">
                                     <h6 class="footer-heading footer-heading-mobile">
-                                        Subscribe to get 10% OFF
+                                        Subscribe to get 10% OFF on your first purchase
                                     </h6>
                                     <div class="tf-collapse-content">
                                         <div class="wrap-newsletter">
@@ -118,14 +111,14 @@
                                             </form>
                                         </div>
                                         <ul class="tf-social-icon">
-                                            <li><a href="#" class="social-facebook"><i
-                                                        class="icon icon-facebook"></i></a></li>
-                                            <li><a href="#" class="social-twiter"><i class="icon icon-x"></i></a></li>
-                                            <li><a href="#" class="social-instagram"><i
+                                            <li><a href="https://www.linkedin.com/in/stylisharc/" class="social-linkedin"><i
+                                                        class="icon icon-linkedin"></i></a></li>
+                                            <li><a href="https://x.com/stylisharc" class="social-twiter"><i class="icon icon-x"></i></a></li>
+                                            <li><a href="https://www.instagram.com/stylisharc/" class="social-instagram"><i
                                                         class="icon icon-instagram"></i></a></li>
-                                            <li><a href="#" class="social-tiktok"><i class="icon icon-skype"></i></a>
+                                            <li><a href="https://www.youtube.com/@stylisharc" class="social-youtube"><i class="icon icon-youtube"></i></a>
                                             </li>
-                                            <li><a href="#" class="social-amazon"><i class="icon icon-telegram"></i></a>
+                                            <li><a href="https://in.pinterest.com/stylisharc/" class="social-pinterest"><i class="icon icon-pinterest"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -142,14 +135,8 @@
                         <div class="col-12">
                             <div class="footer-bottom-wrap">
                                 <div class="left">
-                                    <p class="text-body-default">Copyright ©2025 Oriya. All Rights Reserved.</p>
-                                    <div class="tf-currencies">
-                                        <select class="image-select center style-default style-box type-currencies">
-                                            <option selected data-thumbnail="images/country/us.svg">English (USD)
-                                            </option>
-                                            <option data-thumbnail="images/country/vn.svg">Vietnam (VND)</option>
-                                        </select>
-                                    </div>
+                                    <p class="text-body-default">Copyright <?php echo date('Y');?> Stylish Arc. All Rights Reserved.</p>
+                                    
                                 </div>
                                 <div class="tf-payment">
                                     <ul>

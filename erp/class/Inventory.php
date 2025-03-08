@@ -26,6 +26,13 @@ private $db_handle;
         $result=$this->db_handle->runBaseQuery($query);
         return $result;
     }
+
+    function get_all_collection_limit($limit)
+    {
+        $query = "SELECT * FROM product_category where collection='1' ORDER by rand() LIMIT $limit ";
+        $result=$this->db_handle->runBaseQuery($query);
+        return $result;
+    }
     //----------products
 
 	function save($picture, $buyer_code, $sku_code, $shipping_mark, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $case_number, $fob, $usd, $pcs_cartoon, $cartoon_per_pcs, $l_shape)
@@ -173,7 +180,7 @@ private $db_handle;
     //-- cat and subcatregory
     function get_collection_all()
     {
-        $sql = "SELECT DISTINCT(collection) FROM product_category where collection='1' ORDER BY cat ASC ";
+        $sql = "SELECT DISTINCT(cat) FROM product_category where collection='1' ORDER BY cat ASC ";
         $result = $this->db_handle->runBaseQuery($sql);
         return $result;
     }

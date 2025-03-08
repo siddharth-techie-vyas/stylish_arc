@@ -12,14 +12,14 @@
                         <div class="wrap-slider slide-1">
                             <div class="img-style">
                                 <img class="lazyload" data-src="<?php echo $base_url.'assets/images/'.$slider[$row]['value1'];?>"
-                                    src="<?php echo $base_url.'assets/images/';?>slider/slider-1.jpg" alt="banner-cls">
+                                    src="<?php echo $base_url.'assets/images/'.$slider[$row]['value1'];?>" alt="banner-cls">
                             </div>
                             <div class="box-content">
                                 <div class="box-title">
                                     <h1 class="text-white"><?php echo $slider[$row]['value2'];?></h1>
                                     <p class="text-body-1 text-white"><?php echo $slider[$row]['value3'];?></p>
                                 </div>
-                                <a href="<?php echo $slider[$row]['value4'];?>" class="tf-btn btn-white ">Explore Collection <i class="icon-arrow-up-right"></i></a>
+                                <!-- <a href="<?php echo $slider[$row]['value4'];?>" class="tf-btn btn-white ">Explore Collection <i class="icon-arrow-up-right"></i></a> -->
                             </div>
                         </div>
                     </div>
@@ -747,50 +747,31 @@
                             <div class="banner-left">
                                 <div class="heading-section ">
                                     <h3 class="wow fadeInUp">Discover Our Signature Interior Collections</h3>
-                                    <p class="text-body-default wow fadeInUp" data-wow-delay="0.1s">Explore our carefully crafted interior design
-                                        collections, each tailored to bring elegance and functionality to your spaces.
+                                    <p class="text-body-default wow fadeInUp" data-wow-delay="0.1s">Explore our carefully crafted furniture design
+                                        collections, each tailored to bring elegance and functionality to your spaces.  
                                     </p>
                                 </div>
                                 <ul class="tab-banner" role="tablist">
+
+                                    <?php 
+                                    $collection_limit=$product->get_all_collection_limit(5);
+                                    $c_counter=1;
+                                    foreach($collection_limit as $cl => $v){
+                                    ?>
                                     <li class="nav-tab-item wow fadeInUp">
-                                        <a href="#tabBannerCls1" class="nav-tab-link hover-cursor-img active " data-bs-toggle="tab"
+                                        <a href="#tabBannerCls<?php echo $c_counter; ?>" class="nav-tab-link hover-cursor-img active " data-bs-toggle="tab"
                                             aria-selected="false" role="tab" tabindex="-1">
-                                            <h5 class="title text-line-clamp-1">1. Modern Minimalist Collection</h5>
+                                            <h5 class="title text-line-clamp-1"><?php echo $c_counter; ?>. <?php echo $collection_limit[$cl]['cat']; ?></h5>
                                             <div class="arr-link">
                                                 <span class="text-btn-uppercase text-more">More</span>
                                                 <i class="icon icon-arrow-up-right"></i>
                                             </div>
                                             <div class="hover-image">
-                                                <img src="<?php echo $base_url.'assets/images/';?>section/collections-banner.jpg" alt="Hover Image">
+                                                <img src="<?php echo $base_url.'assets/images/'.$collection_limit[$cl]['image'];?>" alt="Hover Image">
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="nav-tab-item wow fadeInUp" data-wow-delay="0.1s">
-                                        <a href="#tabBannerCls2" class="nav-tab-link hover-cursor-img " data-bs-toggle="tab"
-                                            aria-selected="false" role="tab" tabindex="-1">
-                                            <h5 class="title text-line-clamp-1">2. Cozy Industrial Collection</h5>
-                                            <div class="arr-link">
-                                                <span class="text-btn-uppercase text-more">More</span>
-                                                <i class="icon icon-arrow-up-right"></i>
-                                            </div>
-                                            <div class="hover-image">
-                                                <img src="<?php echo $base_url.'assets/images/';?>section/collections-banner-1.jpg" alt="Hover Image">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-tab-item wow fadeInUp" data-wow-delay="0.2s">
-                                        <a href="#tabBannerCls3" class="nav-tab-link hover-cursor-img  " data-bs-toggle="tab"
-                                            aria-selected="true" role="tab">
-                                            <h5 class="title text-line-clamp-1">3. Scandinavian Elegance Collection</h5>
-                                            <div class="arr-link">
-                                                <span class="text-btn-uppercase text-more">More</span>
-                                                <i class="icon icon-arrow-up-right"></i>
-                                            </div>
-                                            <div class="hover-image">
-                                                <img src="<?php echo $base_url.'assets/images/';?>section/collections-banner-2.jpg" alt="Hover Image">
-                                            </div>
-                                        </a>
-                                    </li>
+                                <?php $c_counter++;}?>
                                 </ul>
                                 <div class="wow fadeInUp">
                                     <a href="#" class="btn-line">
@@ -801,60 +782,31 @@
                             </div>
                             <div class="banner-right flat-animate-tab">
                                 <div class="tab-content ">
-                                    <div class="tab-pane active show" id="tabBannerCls1" role="tabpanel">
+                                    <?php 
+                                    $c1_counter=1;
+                                    foreach($collection_limit as $cl2 => $v){?>
+                                    
+                                    <div class="tab-pane active show" id="tabBannerCls<?php echo $cl_counter;?>" role="tabpanel">
                                         <div class="collection-position hover-img">
                                             <div class="img-style ">
-                                                <img class="lazyload effect-paralax"
-                                                    data-src="<?php echo $base_url.'assets/images/';?>section/collections-banner.jpg"
-                                                    src="<?php echo $base_url.'assets/images/';?>section/collections-banner.jpg" alt="banner-cls">
+                                                <img style="max-height:600px;" class="lazyload effect-paralax"
+                                                    data-src="<?php echo $base_url.'assets/images/'.$collection_limit[$cl2]['image'];?>"
+                                                    src="<?php echo $base_url.'assets/images/'.$collection_limit[$cl2]['image'];?>" alt="<?php echo $collection_limit[$cl2]['cat'];?>">
                                             </div>
                                             <div class="content cls-content">
                                                 <div class="cls-heading">
-                                                    <p class="text_white">Lookbook Collections</p>
-                                                    <h3 class=""> <a href="#" class="link text_white">Modern Minimalist
-                                                            Collection</a></h3>
+                                                    <p class="text_white"><?php echo $collection_limit[$cl2]['cat'];?></p>
+                                                    <h3 class=""> <a href="#" class="link text_white">View</a></h3>
                                                 </div>
                                                 <a href="#" class="tf-btn btn-white  mx-auto">Explore
                                                     Collection <i class="icon-arrow-up-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="tabBannerCls2" role="tabpanel">
-                                        <div class="collection-position hover-img">
-                                            <div class="img-style ">
-                                                <img class="lazyload effect-paralax"
-                                                    data-src="<?php echo $base_url.'assets/images/';?>section/collections-banner-1.jpg"
-                                                    src="<?php echo $base_url.'assets/images/';?>section/collections-banner-1.jpg" alt="banner-cls">
-                                            </div>
-                                            <div class="content cls-content">
-                                                <div class="cls-heading">
-                                                    <p class="text_white">Lookbook Collections</p>
-                                                    <h3 class=""> <a href="#" class="link text_white">Modern Minimalist
-                                                            Collection</a></h3>
-                                                </div>
-                                                <a href="#" class="tf-btn btn-white mx-auto">Explore
-                                                    Collection <i class="icon-arrow-up-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane " id="tabBannerCls3" role="tabpanel">
-                                        <div class="collection-position hover-img">
-                                            <div class="img-style ">
-                                                <img class="lazyload effect-paralax"
-                                                    data-src="<?php echo $base_url.'assets/images/';?>section/collections-banner-2.jpg"
-                                                    src="<?php echo $base_url.'assets/images/';?>section/collections-banner-2.jpg" alt="banner-cls">
-                                            </div>
-                                            <div class="content cls-content">
-                                                <div class="cls-heading">
-                                                    <p class="text_white">Lookbook Collections</p>
-                                                    <h3 class=""> <a href="#" class="link text_white">Modern Minimalist
-                                                            Collection</a></h3>
-                                                </div>
-                                                <a href="#" class="tf-btn btn-white  mx-auto">Explore
-                                                    Collection <i class="icon-arrow-up-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php $cl_counter++; }?>
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>

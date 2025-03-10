@@ -205,7 +205,7 @@
                                                                 $subcat = $product->get_subcategory_all($cat[$k0]['id']);
                                                                 foreach($subcat as $k1=>$value){
                                                                 ?>
-                                                                <li><a href="shop-default.html" class="menu-link-text text_secondary link"><?php echo $subcat[$k1]['subcat'];?></a></li>
+                                                                <li><a href="<?php echo $base_url.'index.php?action=dashboard&page=shop&category='.$subcat[$k1]['cat'].'&subcategory='.$subcat[$k1]['subcat'].'&id='.$subcat[$k1]['id']; ?>" class="menu-link-text text_secondary link"><?php echo $subcat[$k1]['subcat'];?></a></li>
                                                                 <?php }?>
                                                             </ul>
                                                         </div>

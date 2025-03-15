@@ -4,9 +4,9 @@
     ini_set('session.gc_probability', 1);
 	*/
 //=================local
-	$base_url="http://localhost/stylish_arc/erp/";
+	//$base_url="http://localhost/stylish_arc/erp/";
 //-------------online
-//$base_url="https://erp.stylisharc.com/";
+$base_url="https://erp.stylisharc.com/";
 
 	session_start();
 	//create a new function to check if the session variable member_id is on set

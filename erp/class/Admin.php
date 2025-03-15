@@ -18,7 +18,7 @@ class Admin {
         //-- rename file
         $temp = explode(".", $filename);
         $newfilename = round(microtime(true)) . '.' . end($temp);
-        $folder = "././theme/assets/images/". $newfilename;
+        $folder = "../assets/images/". $newfilename;
 
 
 		if (move_uploaded_file($tempname, $folder)) {

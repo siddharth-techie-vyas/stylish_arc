@@ -1,7 +1,7 @@
 //---- local
-var base_url='http://localhost/rubberlike/';
+//var base_url='http://localhost/stylish_arc/erp/';
 //------- server
-//var base_url='http://192.168.1.100/rubberlike/';
+var base_url='http://erp.stylisharc.com/';
 
 var loading_img= base_url+"theme/assets/images/loading.gif";
 function get_subcat(idresult,value,fn)
@@ -58,7 +58,6 @@ function deleteme(h,i,j)
            url: base_url+'index.php?action='+h+'&query='+i+'&id='+j,
            success: function(data)
            {
-              $('#delete_msg').html(data);
               $('#'+j).hide(500);
            }
        }); 

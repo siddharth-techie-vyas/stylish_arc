@@ -108,7 +108,10 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-1" class="collapse submenu submenu-1 <?php echo $product_menu;?>" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link" href="<?php echo $base_url.'index.php?action=dashboard&page=add-product';?>">Add Product</a></li>
+							    <li class="submenu-item"><a class="submenu-link" href="<?php echo $base_url.'index.php?action=dashboard&page=add-collection';?>">Add Collection</a></li>
+								<li class="submenu-item"><a class="submenu-link" href="<?php echo $base_url.'index.php?action=dashboard&page=add-product-category';?>">Add category</a></li>
+								<li class="submenu-item"><a class="submenu-link" href="<?php echo $base_url.'index.php?action=dashboard&page=add-product-subcategory';?>">Add Sub category</a></li>    
+								<li class="submenu-item"><a class="submenu-link" href="<?php echo $base_url.'index.php?action=dashboard&page=add-product';?>">Add Product</a></li>
 							        <li class="submenu-item"><a class="submenu-link" href="<?php echo $base_url.'index.php?action=dashboard&page=viewall-product';?>">Viewall Product</a></li>
 									<!-- <li class="submenu-item"><a class="submenu-link" href="<?php echo $base_url.'index.php?action=dashboard&page=add-category';?>">Product Collection</a></li> -->
 							        <!-- <li class="submenu-item"><a class="submenu-link" href="<?php echo $base_url.'index.php?action=dashboard&page=add-product';?>">Report(s)</a></li> -->

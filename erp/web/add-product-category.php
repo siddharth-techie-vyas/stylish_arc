@@ -5,23 +5,23 @@
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
 			    
-			    <h1 class="app-page-title">Add Collection</h1>
+			    <h1 class="app-page-title">Add Category</h1>
           <?php include('alerts.php'); ?>
           <div class="app-card alert alert-dismissible shadow-sm mb-4 border-left-decoration" role="alert">
 
-                    <form name="product" action="index.php?action=product&query=add-new-collection" method="post" enctype='multipart/form-data'>
+                    <form name="product" action="index.php?action=product&query=add-new-category" method="post" enctype='multipart/form-data'>
                    	
                      <!-- row 1-->
                        <div class="form-group row">
                          
                          <div class="col-sm-6 col-md-6">
-                         <label class="col-form-label">Collection Name <span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="collection_name"  required>
+                         <label class="col-form-label">Category Name <span class="mendetory">*</span></label>
+                           <input type="text" value="" class="form-control form-control-sm" name="cat"  required>
                          </div>
 
                          <div class="col-sm-6 col-md-4">
                          <label class="col-form-label">Image <span class="mendetory">*</span></label>
-                           <input type="file" class="form-control form-control-sm" name="picture"  required>
+                           <input type="file" class="form-control form-control-sm" name="picture">
                          </div>
 
                          <div class="col-sm-2"><br>
@@ -47,7 +47,7 @@
               <thead>
                 <tr>
                   <th class="cell">S.No.</th>
-                  <th class="cell">Collection Name</th>
+                  <th class="cell">Category Name</th>
                   <th class="cell">Image</th>
                   <th class="cell">Action</th>
                 </tr>
@@ -55,7 +55,7 @@
               <tbody>
                 <?php 
                 $counter=1;
-                $viewall=$product->get_all_collection();
+                $viewall=$product->get_all_category();
                 foreach ($viewall as $key => $value) {
                 ?>
                 <tr id="<?php echo $viewall[$key]['id'];?>">

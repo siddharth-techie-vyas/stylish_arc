@@ -12,9 +12,28 @@ private $db_handle;
     //========== collection
     function create_collection($picture, $collection_name)
     {
-        $query = "INSERT INTO collection(collection_name,image)VALUES (?,?)";
-        $paramType = "ss";
-        $paramValue = array($collection_name, $picture);
+        $query = "INSERT INTO product_category(cat,image,collection)VALUES (?,?,?)";
+        $paramType = "ssi";
+        $paramValue = array($collection_name, $picture,'1');
+        $result=$this->db_handle->insert($query, $paramType, $paramValue);
+        return $result;
+    }
+
+
+    function create_category($picture, $cat)
+    {
+        $query = "INSERT INTO product_category(cat,image,collection)VALUES (?,?,?)";
+        $paramType = "ssi";
+        $paramValue = array($cat, $picture,'0');
+        $result=$this->db_handle->insert($query, $paramType, $paramValue);
+        return $result;
+    }
+
+    function create_subcategory($picture, $cat, $subcat)
+    {
+        $query = "INSERT INTO product_category(cat,subcat,image,collection)VALUES (?,?,?,?)";
+        $paramType = "sssi";
+        $paramValue = array($cat,$subcat, $picture,'0');
         $result=$this->db_handle->insert($query, $paramType, $paramValue);
         return $result;
     }
@@ -22,7 +41,7 @@ private $db_handle;
 
     function get_all_collection()
     {
-        $query = "SELECT * FROM collection";
+        $query = "SELECT * FROM product_category where collection='1' ";
         $result=$this->db_handle->runBaseQuery($query);
         return $result;
     }
@@ -185,6 +204,13 @@ private $db_handle;
         return $result;
     }
 
+    function get_category($id)
+    {
+        $sql = "SELECT * FROM product_category where id='$id' ";
+        $result = $this->db_handle->runBaseQuery($sql);
+        return $result;
+    }
+
     function get_category_all()
     {
         $sql = "SELECT DISTINCT(cat),id,image FROM product_category where cat NOT REGEXP '^[0-9]+$' AND collection='0' ORDER BY cat ASC ";
@@ -195,6 +221,30 @@ private $db_handle;
     function get_subcategory_all($cat)
     {
         $sql = "SELECT * FROM product_category where cat='$cat' ORDER BY subcat ASC ";
+        $result = $this->db_handle->runBaseQuery($sql);
+        return $result;
+    }
+
+    function get_subcategories()
+    {
+        $sql = "SELECT * FROM product_category where cat REGEXP '^[0-9]+$' ORDER BY subcat ASC ";
+        $result = $this->db_handle->runBaseQuery($sql);
+        return $result;
+    }
+
+
+    function delete_collection($id)
+    {
+        $sql = "delete FROM product_category where id='$id'";
+        $result = $this->db_handle->update($sql);
+        return $result;
+    }
+
+    
+
+    function get_all_category()
+    {
+        $sql = "select * FROM product_category where collection='0' AND cat NOT REGEXP '^[0-9]+$' ";
         $result = $this->db_handle->runBaseQuery($sql);
         return $result;
     }

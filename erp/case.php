@@ -83,14 +83,43 @@ case "product":
 
 			if($_GET['query']=='add-new-collection')
 			{
-				echo "called";
+				
 				$picture=$admin->upload_image($_FILES['picture']);	
 				$get = $product->create_collection($picture, $_POST['collection_name']);
 			
-			if($get)
-			{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-collection&status=1&id=".$get."';</script>";}   
-			else
-			{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-product&status=2';</script>";}
+				if($get)
+				{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-collection&status=1&id=".$get."';</script>";}   
+				else
+				{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-product&status=2';</script>";}
+			}
+
+			if($_GET['query']=='add-new-category')
+			{
+				
+				$picture=$admin->upload_image($_FILES['picture']);	
+				$get = $product->create_category($picture, $_POST['cat']);
+			
+				if($get)
+				{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-product-category&status=1&id=".$get."';</script>";}   
+				else
+				{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-product-category&status=2';</script>";}
+			}
+
+			if($_GET['query']=='add-new-subcategory')
+			{
+				
+				$picture=$admin->upload_image($_FILES['picture']);	
+				$get = $product->create_subcategory($picture, $_POST['cat'], $_POST['subcat']);
+			
+				if($get)
+				{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-product-subcategory&status=1&id=".$get."';</script>";}   
+				else
+				{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=add-product-subcategory&status=2';</script>";}
+			}
+
+			if($_GET['query']=='delete-collection')
+			{
+				$product->delete_collection($_GET['id']);		
 			}
 
 			if($_GET['query']=='add-cartoon')

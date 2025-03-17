@@ -34,7 +34,7 @@
                             	<td><?php echo $counter++;?></td>
                               <td>
                                 <?php 
-                                $file='theme/assets/images/'.$result[$k]["picture"];
+                                $file='../assets/images/'.$result[$k]["picture"];
                                 if(file_exists($file)){?>
                               <img src="<?php echo $base_url.'theme/assets/images/'.$result[$k]["picture"]; ?>" wisth="auto" height="40">
                                   <?php }else{echo "<i class='fa fa-image'></i>";}?>

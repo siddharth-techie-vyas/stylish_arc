@@ -37,7 +37,7 @@
         </div><!-- /.silideshow -->
 
         <!-- /.categories -->
-        <section class="flat-spacing-2 ">
+        <!-- <section class="flat-spacing-2 ">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-10">
@@ -62,10 +62,12 @@
                     </div>
                 </div>
             </div>
-        </section><!-- /.categories -->
+        </section> -->
+        
+        <!-- /.categories -->
 
         <!-- .top--pick -->
-        <section class="flat-spacing-5 pt-0">
+        <section class="flat-spacing-5 pt-0" style="margin-top:10px;">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -81,11 +83,11 @@
                         ?>
                             <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
                                 <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="image-wrap">
-                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/';?>"
-                                            src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row1]['product_name'];?>">
-                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/';?>"
-                                            src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row1]['product_name'];?>">
+                                    <a href="#" class="image-wrap">
+                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/'.$random_pro[$row2]['picture'];?>"
+                                            src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row2]['product_name'];?>">
+                                        <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/'.$random_pro[$row2]['picture'];?>"
+                                            src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row2]['product_name'];?>">
                                     </a>
                                     <div class="list-product-btn">
                                         <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
@@ -109,8 +111,8 @@
                                     </div>
                                 </div>
                                 <div class="card-product-info ">
-                                    <a href="product-detail.html" class=" text-title title link"><?php echo $random_pro[$row1]['product_name'];?></a>
-                                    <div class="price text-body-default "><?php echo $random_pro[$row1]['usd'];?></div>
+                                    <a href="product-detail.html" class=" text-title title link"><?php echo $random_pro[$row2]['product_name'];?></a>
+                                    <div class="price text-body-default "><i class="fa fa-inr"></i> <?php echo $random_pro[$row2]['inr'];?></div>
                                     <!-- <ul class="list-color-product">
                                         <li class="list-color-item color-swatch active">
                                             <span class="d-none text-capitalize color-filter">Light Blue</span>
@@ -419,304 +421,61 @@
                             <div class="swiper tf-sw-collection" data-preview="4" data-tablet="3" data-mobile-sm="2"
                                 data-mobile="1" data-space-lg="30" data-space-md="20" data-space="15" data-loop="false">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
-                                            <div class="card-product-wrapper">
-                                                <a href="product-detail.html" class="image-wrap">
-                                                    <img class="lazyload img-product"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-9.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-9.jpg" alt="image-product">
-                                                    <img class="lazyload img-hover"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-9.1.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-9.1.jpg" alt="image-product">
-                                                </a>
-                                                <div class="list-product-btn">
-                                                    <a href="javascript:void(0);"
-                                                        class="box-icon wishlist btn-icon-action">
-                                                        <span class="icon icon-heart"></span>
-                                                        <span class="tooltip">Wishlist</span>
-                                                    </a>
-                                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                                        class="box-icon compare ">
-                                                        <span class="icon icon-compare"></span>
-                                                        <span class="tooltip">Compare</span>
-                                                    </a>
-                                                    <a href="#quickView" data-bs-toggle="modal"
-                                                        class="box-icon quickview tf-btn-loading">
-                                                        <span class="icon icon-eye"></span>
-                                                        <span class="tooltip">Quick View</span>
-                                                    </a>
+
+                                <?php $random_pro2=$admin->get_random_product();
+                                        if($random_pro2){
+                                            foreach($random_pro2 as $row3=>$value)
+                                            {
+                                            ?>
+                                                <div class="swiper-slide">
+                                                    <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
+                                                        <div class="card-product-wrapper">
+                                                            <a href="product-detail.html" class="image-wrap">
+                                                                <img class="lazyload img-product"
+                                                                    data-src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>"
+                                                                    src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>" alt="image-product">
+                                                                <img class="lazyload img-hover"
+                                                                    data-src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>"
+                                                                    src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>" alt="image-product">
+                                                            </a>
+                                                            <div class="list-product-btn">
+                                                                <a href="javascript:void(0);"
+                                                                    class="box-icon wishlist btn-icon-action">
+                                                                    <span class="icon icon-heart"></span>
+                                                                    <span class="tooltip">Wishlist</span>
+                                                                </a>
+                                                                <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
+                                                                    class="box-icon compare ">
+                                                                    <span class="icon icon-compare"></span>
+                                                                    <span class="tooltip">Compare</span>
+                                                                </a>
+                                                                <a href="#quickView" data-bs-toggle="modal"
+                                                                    class="box-icon quickview tf-btn-loading">
+                                                                    <span class="icon icon-eye"></span>
+                                                                    <span class="tooltip">Quick View</span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="list-btn-main">
+                                                                <a href="#shoppingCart" data-bs-toggle="modal"
+                                                                    class="btn-main-product">Add To
+                                                                    cart</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-product-info ">
+                                                            <a href="#" class=" text-title title link"><?php echo $random_pro2[$row3]['product_name'];?></a>
+                                                            <div class="price text-body-default "><i class="fa fa-inr"></i> <?php echo $random_pro2[$row3]['inr'];?></div>
+                                                            <ul class="list-color-product">
+                                                                <li class="list-color-item color-swatch active">
+                                                                    <span class="d-none text-capitalize color-filter"><?php echo $random_pro2[$row3]['color'];?></span>
+                                                                    <span class="swatch-value bg-light-blue"></span>
+                                                                    <!-- <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-9.2.jpg"
+                                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-9.2.jpg" alt="image-product"> -->
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="list-btn-main">
-                                                    <a href="#shoppingCart" data-bs-toggle="modal"
-                                                        class="btn-main-product">Add To
-                                                        cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="card-product-info ">
-                                                <a href="product-detail.html" class=" text-title title link">Softside
-                                                    Chair</a>
-                                                <div class="price text-body-default ">$79.99</div>
-                                                <ul class="list-color-product">
-                                                    <li class="list-color-item color-swatch active">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Blue</span>
-                                                        <span class="swatch-value bg-light-blue"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-9.2.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-9.2.jpg" alt="image-product">
-                                                    </li>
-                                                    <li class="list-color-item color-swatch">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Blue</span>
-                                                        <span class="swatch-value bg-light-blue-2"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-9.3.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-9.3.jpg" alt="image-product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
-                                            <div class="card-product-wrapper">
-                                                <a href="product-detail.html" class="image-wrap">
-                                                    <img class="lazyload img-product"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-10.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-10.jpg" alt="image-product">
-                                                    <img class="lazyload img-hover"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-10.1.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-10.1.jpg" alt="image-product">
-                                                </a>
-                                                <div class="on-sale-wrap"><span class="on-sale-item">-25%</span>
-                                                </div>
-                                                <div class="list-product-btn">
-                                                    <a href="javascript:void(0);"
-                                                        class="box-icon wishlist btn-icon-action">
-                                                        <span class="icon icon-heart"></span>
-                                                        <span class="tooltip">Wishlist</span>
-                                                    </a>
-                                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                                        class="box-icon compare ">
-                                                        <span class="icon icon-compare"></span>
-                                                        <span class="tooltip">Compare</span>
-                                                    </a>
-                                                    <a href="#quickView" data-bs-toggle="modal"
-                                                        class="box-icon quickview tf-btn-loading">
-                                                        <span class="icon icon-eye"></span>
-                                                        <span class="tooltip">Quick View</span>
-                                                    </a>
-                                                </div>
-                                                <div class="list-btn-main">
-                                                    <a href="#shoppingCart" data-bs-toggle="modal"
-                                                        class="btn-main-product">Add To
-                                                        cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="card-product-info ">
-                                                <a href="product-detail.html" class=" text-title title link">Softside
-                                                    Chair</a>
-                                                <div class="price text-body-default "><span
-                                                        class="text-caption-1 old-price">$98.00</span>$79.99</div>
-                                                <ul class="list-color-product">
-                                                    <li class="list-color-item color-swatch active">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Blue</span>
-                                                        <span class="swatch-value bg-light-blue"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-10.2.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-10.2.jpg" alt="image-product">
-                                                    </li>
-                                                    <li class="list-color-item color-swatch">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Blue</span>
-                                                        <span class="swatch-value bg-light-blue-2"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-10.3.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-10.3.jpg" alt="image-product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
-                                            <div class="card-product-wrapper">
-                                                <a href="product-detail.html" class="image-wrap">
-                                                    <img class="lazyload img-product"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-11.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-11.jpg" alt="image-product">
-                                                    <img class="lazyload img-hover"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-11.1.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-11.1.jpg" alt="image-product">
-                                                </a>
-                                                <div class="on-sale-wrap"><span class="on-sale-item">-25%</span>
-                                                </div>
-                                                <div class="list-product-btn">
-                                                    <a href="javascript:void(0);"
-                                                        class="box-icon wishlist btn-icon-action">
-                                                        <span class="icon icon-heart"></span>
-                                                        <span class="tooltip">Wishlist</span>
-                                                    </a>
-                                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                                        class="box-icon compare ">
-                                                        <span class="icon icon-compare"></span>
-                                                        <span class="tooltip">Compare</span>
-                                                    </a>
-                                                    <a href="#quickView" data-bs-toggle="modal"
-                                                        class="box-icon quickview tf-btn-loading">
-                                                        <span class="icon icon-eye"></span>
-                                                        <span class="tooltip">Quick View</span>
-                                                    </a>
-                                                </div>
-                                                <div class="list-btn-main">
-                                                    <a href="#shoppingCart" data-bs-toggle="modal"
-                                                        class="btn-main-product">Add To
-                                                        cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="card-product-info ">
-                                                <a href="product-detail.html" class=" text-title title link">Double
-                                                    Standing Desk</a>
-                                                <div class="price text-body-default "><span
-                                                        class="text-caption-1 old-price">$98.00</span>$89.99</div>
-                                                <ul class="list-color-product">
-                                                    <li class="list-color-item color-swatch active">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Orange</span>
-                                                        <span class="swatch-value bg-light-orange"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-11.2.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-11.2.jpg" alt="image-product">
-                                                    </li>
-                                                    <li class="list-color-item color-swatch">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Grey</span>
-                                                        <span class="swatch-value bg-light-grey"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-11.3.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-11.3.jpg" alt="image-product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
-                                            <div class="card-product-wrapper">
-                                                <a href="product-detail.html" class="image-wrap">
-                                                    <img class="lazyload img-product"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-12.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-12.jpg" alt="image-product">
-                                                    <img class="lazyload img-hover"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-12.1.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-12.1.jpg" alt="image-product">
-                                                </a>
-                                                <div class="list-product-btn">
-                                                    <a href="javascript:void(0);"
-                                                        class="box-icon wishlist btn-icon-action">
-                                                        <span class="icon icon-heart"></span>
-                                                        <span class="tooltip">Wishlist</span>
-                                                    </a>
-                                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                                        class="box-icon compare ">
-                                                        <span class="icon icon-compare"></span>
-                                                        <span class="tooltip">Compare</span>
-                                                    </a>
-                                                    <a href="#quickView" data-bs-toggle="modal"
-                                                        class="box-icon quickview tf-btn-loading">
-                                                        <span class="icon icon-eye"></span>
-                                                        <span class="tooltip">Quick View</span>
-                                                    </a>
-                                                </div>
-                                                <div class="list-btn-main">
-                                                    <a href="#shoppingCart" data-bs-toggle="modal"
-                                                        class="btn-main-product">Add To
-                                                        cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="card-product-info ">
-                                                <a href="product-detail.html" class=" text-title title link">Duo
-                                                    Standing Desk</a>
-                                                <div class="price text-body-default ">$69.99</div>
-                                                <ul class="list-color-product">
-                                                    <li class="list-color-item color-swatch active">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Brown</span>
-                                                        <span class="swatch-value bg-light-brown"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-12.2.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-12.2.jpg" alt="image-product">
-                                                    </li>
-                                                    <li class="list-color-item color-swatch">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Bink</span>
-                                                        <span class="swatch-value bg-light-pink"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-12.3.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-12.3.jpg" alt="image-product">
-                                                    </li>
-                                                    <li class="list-color-item color-swatch">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Grey</span>
-                                                        <span class="swatch-value bg-dark-grey-2"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-12.4.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-12.4.jpg" alt="image-product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-product style-1">
-                                            <div class="card-product-wrapper">
-                                                <a href="product-detail.html" class="image-wrap">
-                                                    <img class="lazyload img-product"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-1.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-1.jpg" alt="image-product">
-                                                    <img class="lazyload img-hover"
-                                                        data-src="<?php echo $base_url.'assets/images/';?>shop/product-1.1.jpg"
-                                                        src="<?php echo $base_url.'assets/images/';?>shop/product-1.1.jpg" alt="image-product">
-                                                </a>
-                                                <div class="list-product-btn">
-                                                    <a href="javascript:void(0);"
-                                                        class="box-icon wishlist btn-icon-action">
-                                                        <span class="icon icon-heart"></span>
-                                                        <span class="tooltip">Wishlist</span>
-                                                    </a>
-                                                    <a href="#compare" data-bs-toggle="modal" aria-controls="compare"
-                                                        class="box-icon compare ">
-                                                        <span class="icon icon-compare"></span>
-                                                        <span class="tooltip">Compare</span>
-                                                    </a>
-                                                    <a href="#quickView" data-bs-toggle="modal"
-                                                        class="box-icon quickview tf-btn-loading">
-                                                        <span class="icon icon-eye"></span>
-                                                        <span class="tooltip">Quick View</span>
-                                                    </a>
-                                                </div>
-                                                <div class="list-btn-main">
-                                                    <a href="#shoppingCart" data-bs-toggle="modal"
-                                                        class="btn-main-product">Add To
-                                                        cart</a>
-                                                </div>
-                                            </div>
-                                            <div class="card-product-info ">
-                                                <a href="product-detail.html" class=" text-title title link">Alumina
-                                                    Lamp</a>
-                                                <div class="price text-body-default "><span
-                                                        class="text-caption-1 old-price">$98.00</span>$79.99</div>
-                                                <ul class="list-color-product">
-                                                    <li class="list-color-item color-swatch active">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Blue</span>
-                                                        <span class="swatch-value bg-light-blue"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-1.2.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-1.2.jpg" alt="image-product">
-                                                    </li>
-                                                    <li class="list-color-item color-swatch">
-                                                        <span class="d-none text-capitalize color-filter">Light
-                                                            Blue</span>
-                                                        <span class="swatch-value bg-light-blue-2"></span>
-                                                        <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-1.3.jpg"
-                                                            src="<?php echo $base_url.'assets/images/';?>shop/product-1.3.jpg" alt="image-product">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                            <?php }}?>
                                     </div>
                                 </div>
                                 <div class="wrap-pagination d-lg-none d-block">

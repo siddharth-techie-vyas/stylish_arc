@@ -2163,6 +2163,21 @@
     </div>
     <!-- /size-guide -->
 
+
+    <!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '46a11c1c1be7807a034b2ce730e63b3fe65b38cd';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+
     <!-- Javascript -->
     <script type="text/javascript" src="<?php echo $base_url.'assets/';?>js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo $base_url.'assets/';?>js/jquery.min.js"></script>

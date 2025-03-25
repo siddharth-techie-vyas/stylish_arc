@@ -72,8 +72,22 @@ case "product":
 		{
 			if($_GET['query']=='add-new-product')
 			{
-			$picture=$admin->upload_image($_FILES['picture']);	
-			$get = $product->save($picture, $_POST['buyer_code'], $_POST['sku_code'], $_POST['shipping_mark'], $_POST['product_name'], $_POST['hsn_code'], $_POST['width'], $_POST['length'], $_POST['height'], $_POST['gross_cbm'], $_POST['color'], $_POST['assembly'], $_POST['case_number'], $_POST['fob'], $_POST['usd'], $_POST['pcs_cartoon'], $_POST['cartoon_per_pcs'], $_POST['lshape']);
+				$file=array();
+				if($_FILES['picture'])
+				{$picture=$admin->upload_image($_FILES['picture']);	}
+				else{$picture='';}
+
+				if(isset($_FILES['picture2']))
+					{		
+						foreach($_FILES['picture2']['name'] as $k=>$v)
+						{
+							$file[] = $admin->upload_file_multi($_FILES['picture2']['name'][$k],$_FILES['attachment']['tmp_name'][$k]);
+						}
+					}
+					$picture2 = implode(",",($file));
+
+
+			$get = $product->save($picture, $_POST['buyer_code'], $_POST['sku_code'], $_POST['cat'], $_POST['product_name'], $_POST['hsn_code'], $_POST['width'], $_POST['length'], $_POST['height'], $_POST['gross_cbm'], $_POST['color'], $_POST['assembly'], $_POST['case_number'], $_POST['fob'], $_POST['usd'], $_POST['pcs_cartoon'], $_POST['cartoon_per_pcs'], $picture2);
 			
 			if($get)
 			{echo "<script>window.location.href='".$base_url."index.php?action=dashboard&page=update-product&status=1&id=".$get."';</script>";}   

@@ -147,7 +147,7 @@
         </section><!-- /.top--pick -->
 
         <!-- .lookbook -->
-        <section class="flat-spacing-3 bg_surface">
+        <!-- <section class="flat-spacing-3 bg_surface">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -409,7 +409,8 @@
                 </div>
                 <div class="sw-pagination-lookbook sw-dots type-circle justify-content-center"></div>
             </div>
-        </section><!-- .lookbook -->
+        </section>.
+        lookbook -->
 
         <!-- .top-sale -->
         <section class="flat-spacing-5 ">

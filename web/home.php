@@ -726,7 +726,7 @@
                                                 <div class="box-price">
                                                     <p class="text-title  text-line-clamp-1"> <a href="#"
                                                             class="link"><?php echo $proone[0]['product_name'];?></a></p>
-                                                    <div class="text-button price"><i class="fa fa-inr"></i> <?php echo $proone[0]['usd'];?></div>
+                                                    <div class="text-button price"><i class="fa fa-inr"></i> <?php echo $proone[0]['inr'];?></div>
                                                 </div>
                                             </div>
                                         </div>

@@ -84,13 +84,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                     </div>
                     <div class="topbar-center">
-                        <p class="text-caption-1 text_white">Free shipping on all orders over <span
-                                class="text_primary">$20.00</span></p>
+                        <p class="text-caption-1 text_white">Free shipping on your first order</p>
                     </div>
                     <div class="topbar-right d-none d-xl-flex">
-                        <a href="about.html" class="text_white text-caption-1 link">About</a>
-                        <a href="contact.html" class="text_white text-caption-1 link">Contact</a>
-                        <a href="store-list.html" class="text_white text-caption-1 link">Location</a>
+                        <a href="<?php echo $base_url.'index.php?action=dashboard&page=about-us';?>" class="text_white text-caption-1 link">About</a>
+                        <a href="<?php echo $base_url.'index.php?action=dashboard&page=contact-us';?>" class="text_white text-caption-1 link">Contact</a>
                     </div>
                 </div>
             </div>
@@ -107,6 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="row wrapper-header align-items-center">
                         <div class="col-xl-5 d-none d-xl-block">
                             <div class="wrapper-header-left">
+                                <!--- to do --->
                                 <form class="form-search" action="#">
                                     <fieldset class="text">
                                         <input type="text" placeholder="Searching..." class="" name="text" tabindex="0"
@@ -135,19 +134,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <div class="col-xl-5 col-md-4 col-4">
                             <ul class="nav-icon">
                                 <li class="nav-account">
-                                    <a href="login.html" class="nav-icon-item">
+                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=login';?>" class="nav-icon-item">
                                         <span class="icon icon-user"></span>
                                     </a>
                                 </li>
                                 <li class="nav-wishlist">
-                                    <a href="wish-list.html" class="nav-icon-item">
+                                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=wishlist';?>" class="nav-icon-item">
                                         <span class="icon icon-heart"></span>
                                     </a>
                                 </li>
                                 <li class="nav-cart"><a href="#shoppingCart" data-bs-toggle="modal"
                                         class="nav-icon-item">
                                         <span class="icon icon-cart"></span>
-                                        <span class="count-box text-button-small">1</span></a>
+                                        <span class="count-box text-button-small">0</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -167,6 +166,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     <div class="list-categories-inner">
                                         <ul>
                                             <?php $collection=$product->get_collection_all();
+                                            if($collection){
                                             foreach($collection as $k=>$value){
                                             ?>
                                             <li class="sub-categories2">
@@ -195,7 +195,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                     </li>
                                                 </ul> -->
                                             </li>
-                                            <?php }?>
+                                            <?php } } else {echo "<li>No Collection Found</li>";}?>
                                         </ul>
                                        
                                     </div>
@@ -289,7 +289,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </nav>
                         </div>
                         <div class="col-xl-3">
-                            <a href="tel:315-666-6688" class="box-right phone text-button"><span
+                            <a href="tel:<?php echo $company[0]['phone'];?>" class="box-right phone text-button"><span
                                     class="icon icon-phone"></span><span class="number-phone"><?php echo $company[0]['phone'];?></span></a>
                         </div>
                     </div>

@@ -2193,10 +2193,4 @@ s0.parentNode.insertBefore(s1,s0);
 </body>
 
 
-<!--
-Application and version: A1 Website Download version 12.0.0 update #4 (Windows)
-Page saved to disk at ISO datetime: 2025-01-15 18:12:18
-Original URL: https://themesflat.co/html/oriya/
-Relative path on disk: index.html
--->
 </html>

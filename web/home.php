@@ -19,7 +19,7 @@
                                     <h1 class="text-white"><?php echo $slider[$row]['value2'];?></h1>
                                     <p class="text-body-1 text-white"><?php echo $slider[$row]['value3'];?></p>
                                 </div>
-                                <!-- <a href="<?php echo $slider[$row]['value4'];?>" class="tf-btn btn-white ">Explore Collection <i class="icon-arrow-up-right"></i></a> -->
+                                <a href="<?php echo $slider[$row]['value4'];?>" class="tf-btn btn-white ">Explore Collection <i class="icon-arrow-up-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -31,8 +31,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="sw-button swiper-button-next  navigation-next-slider"></div>
-                <div class="sw-button swiper-button-prev navigation-prev-slider"></div>
+                <!-- <div class="sw-button swiper-button-next  navigation-next-slider"></div>
+                <div class="sw-button swiper-button-prev navigation-prev-slider"></div> -->
             </div>
         </div><!-- /.silideshow -->
 
@@ -84,11 +84,20 @@
                             <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
                                 <div class="card-product-wrapper">
                                     <a href="#" class="image-wrap">
+                                        <?php if(!file_exists($base_url.'assets/images/'.$random_pro[$row2]['picture'])){?>
                                         <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/'.$random_pro[$row2]['picture'];?>"
                                             src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row2]['product_name'];?>">
+
                                         <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/'.$random_pro[$row2]['picture'];?>"
                                             src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row2]['product_name'];?>">
+                                            <?php } else{?>
+                                                <img src="<?php echo $base_url.'assets/images/noimage_found.jpg';?>"/>
+                                            <?php }?>
+
+
                                     </a>
+                                    <!-- 
+                                    to do
                                     <div class="list-product-btn">
                                         <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">
                                             <span class="icon icon-heart"></span>
@@ -104,11 +113,11 @@
                                             <span class="icon icon-eye"></span>
                                             <span class="tooltip">Quick View</span>
                                         </a>
-                                    </div>
+                                    </div> 
                                     <div class="list-btn-main">
                                         <a href="#shoppingCart" data-bs-toggle="modal" class="btn-main-product">Add To
                                             cart</a>
-                                    </div>
+                                    </div>-->
                                 </div>
                                 <div class="card-product-info ">
                                     <a href="product-detail.html" class=" text-title title link"><?php echo $random_pro[$row2]['product_name'];?></a>
@@ -438,7 +447,7 @@
                                                                     data-src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>"
                                                                     src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>" alt="image-product">
                                                             </a>
-                                                            <div class="list-product-btn">
+                                                            <!-- <div class="list-product-btn">
                                                                 <a href="javascript:void(0);"
                                                                     class="box-icon wishlist btn-icon-action">
                                                                     <span class="icon icon-heart"></span>
@@ -459,16 +468,16 @@
                                                                 <a href="#shoppingCart" data-bs-toggle="modal"
                                                                     class="btn-main-product">Add To
                                                                     cart</a>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                         <div class="card-product-info ">
                                                             <a href="#" class=" text-title title link"><?php echo $random_pro2[$row3]['product_name'];?></a>
-                                                            <div class="price text-body-default "><i class="fa-duotone fa-thin fa-dog"></i> <?php echo $random_pro2[$row3]['inr'];?></div>
+                                                            <div class="price text-body-default "><i class="fa fa-inr"></i> <?php echo $random_pro2[$row3]['inr'];?></div>
                                                             <ul class="list-color-product">
                                                                 <li class="list-color-item color-swatch active">
                                                                     <span class="d-none text-capitalize color-filter"><?php echo $random_pro2[$row3]['color'];?></span>
-                                                                    <span class="swatch-value bg-light-blue"></span>
-                                                                    <!-- <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-9.2.jpg"
+                                                                    <!--<span class="swatch-value bg-light-blue"></span>
+                                                                     <img class="lazyload" data-src="<?php echo $base_url.'assets/images/';?>shop/product-9.2.jpg"
                                                                         src="<?php echo $base_url.'assets/images/';?>shop/product-9.2.jpg" alt="image-product"> -->
                                                                 </li>
                                                             </ul>
@@ -643,8 +652,7 @@
                             <div class="heading-section style-2 align-items-end">
                                 <div class="left">
                                     <h3 class="wow fadeInUp">Customer Say!</h3>
-                                    <p class="text-body-default text_secondary wow fadeInUp" data-wow-delay="0s">Our customers adore our products, and we
-                                        constantly aim to delight them.</p>
+                                    <p class="text-body-default text_secondary wow fadeInUp" data-wow-delay="0s">Our customers adore our products, and we constantly aim to delight them.</p>
                                 </div>
                                 <div class="right md-none">
                                     <div class="wrap-button ">
@@ -663,6 +671,9 @@
                         <div class="swiper tf-sw-testimonial style-2" data-preview="2.44" data-wow-delay="0.1s"
                             data-tablet="1" data-mobile="1" data-space-lg="30" data-space-md="30" data-space="15">
                             <div class="swiper-wrapper">
+                               
+                                    <?php $testimonails=$admin->get_testimonials_limit(5);
+                                    foreach($testimonails as $r=>$v){?>
                                 <div class="swiper-slide">
                                     <div class="testimonial-item hover-img">
                                         <div class="content">
@@ -704,142 +715,30 @@
                                             </div>
                                             <div class="box-product">
                                                 <div class="product-img avt-62 round">
-                                                    <img src="<?php echo $base_url.'assets/images/';?>shop/testimonials-item-1.jpg" alt="avt">
+                                                    <?php 
+                                                    $proone=$product->getone($testimonails[$r]['pid']);
+                                                    if(!file_exists($base_url.'assets/images/'.$proone[0]['picture'])){?>
+                                                        <img src="<?php echo $base_url.'assets/images/'.$proone[0]['picture'];?>" alt="stylish arc- customer testimonials - <?php echo $base_url.'assets/images/'.$proone[0]['product_name'];?>">
+                                                        <?php } else{?>
+                                                    <img src="<?php echo $base_url.'assets/images/noimage_found.jpg';?>"/>
+                                                    <?php }?>
                                                 </div>
                                                 <div class="box-price">
-                                                    <p class="text-title  text-line-clamp-1"> <a href="product-detail.html"
-                                                            class="link">Contrasting
-                                                            sheepskin...</a></p>
-                                                    <div class="text-button price">$60.00</div>
+                                                    <p class="text-title  text-line-clamp-1"> <a href="#"
+                                                            class="link"><?php echo $proone[0]['product_name'];?></a></p>
+                                                    <div class="text-button price"><i class="fa fa-inr"></i> <?php echo $proone[0]['usd'];?></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="img-style">
-                                            <img data-src="<?php echo $base_url.'assets/images/';?>section/testimonials-1.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>section/testimonials-1.jpg" alt="img-testimonial">
-                                            <a href="#quickView" data-bs-toggle="modal" class="box-icon hover-tooltip center">
-                                                <span class="icon icon-eye"></span>
-                                                <span class="tooltip">Quick View</span>
-                                            </a>
-                                        </div>
+                                    
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item hover-img">
-                                        <div class="content">
-                                            <div class="content-top">
-                                                <div class="list-star-default">
-                                                    <i class="icon icon-star"></i>
-                                                    <i class="icon icon-star"></i>
-                                                    <i class="icon icon-star"></i>
-                                                    <i class="icon icon-star"></i>
-                                                    <i class="icon icon-star"></i>
-                                                </div>
-                                                <p class="text-secondary text-body-1">"Oriya offers a fantastic range of
-                                                    office products at competitive prices. Their customer service was
-                                                    helpful, and the ordering process was seamless."</p>
-                                                <div class="box-author align-items-center d-flex gap-6">
-                                                    <div class="text-title author"><a href="#" class="link">Michael</a>
-                                                    </div>
-                                                    <svg class="icon" width="20" height="21" viewBox="0 0 20 21"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_15758_14563)">
-                                                            <path d="M6.875 11.6255L8.75 13.5005L13.125 9.12549"
-                                                                stroke="#3DAB25" stroke-width="1.5"
-                                                                stroke-linecap="round" stroke-linejoin="round" />
-                                                            <path
-                                                                d="M10 18.5005C14.1421 18.5005 17.5 15.1426 17.5 11.0005C17.5 6.85835 14.1421 3.50049 10 3.50049C5.85786 3.50049 2.5 6.85835 2.5 11.0005C2.5 15.1426 5.85786 18.5005 10 18.5005Z"
-                                                                stroke="#3DAB25" stroke-width="1.5"
-                                                                stroke-linecap="round" stroke-linejoin="round" />
-                                                        </g>
-                                                        <defs>
-                                                            <clipPath >
-                                                                <rect width="20" height="20" fill="white"
-                                                                    transform="translate(0 0.684082)" />
-                                                            </clipPath>
-                                                        </defs>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="box-product">
-                                                <div class="product-img avt-62 round">
-                                                    <img src="<?php echo $base_url.'assets/images/';?>shop/testimonials-item-2.jpg" alt="avt">
-                                                </div>
-                                                <div class="box-price">
-                                                    <p class="text-title  text-line-clamp-1"> <a href="product-detail.html"
-                                                            class="link">Contrasting sheepskin...</a></p>
-                                                    <div class="text-button price">$60.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="img-style">
-                                            <img data-src="<?php echo $base_url.'assets/images/';?>section/testimonials-2.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>section/testimonials-2.jpg" alt="img-testimonial">
-                                            <a href="#quickView" data-bs-toggle="modal" class="box-icon hover-tooltip center">
-                                                <span class="icon icon-eye"></span>
-                                                <span class="tooltip">Quick View</span>
-                                            </a>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item hover-img">
-                                        <div class="content">
-                                            <div class="content-top">
-                                                <div class="list-star-default">
-                                                    <i class="icon icon-star"></i>
-                                                    <i class="icon icon-star"></i>
-                                                    <i class="icon icon-star"></i>
-                                                    <i class="icon icon-star"></i>
-                                                    <i class="icon icon-star"></i>
-                                                </div>
-                                                <p class="text-secondary text-body-1">"I found everything I needed for
-                                                    my home office here. Excellent selection, prompt delivery, and
-                                                    top-notch customer support. Highly recommend Oriya!"</p>
-                                                <div class="box-author align-items-center d-flex gap-6">
-                                                    <div class="text-title author"><a href="#" class="link">Jennifer</a>
-                                                    </div>
-                                                    <svg class="icon" width="20" height="21" viewBox="0 0 20 21"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_15758_14563)">
-                                                            <path d="M6.875 11.6255L8.75 13.5005L13.125 9.12549"
-                                                                stroke="#3DAB25" stroke-width="1.5"
-                                                                stroke-linecap="round" stroke-linejoin="round" />
-                                                            <path
-                                                                d="M10 18.5005C14.1421 18.5005 17.5 15.1426 17.5 11.0005C17.5 6.85835 14.1421 3.50049 10 3.50049C5.85786 3.50049 2.5 6.85835 2.5 11.0005C2.5 15.1426 5.85786 18.5005 10 18.5005Z"
-                                                                stroke="#3DAB25" stroke-width="1.5"
-                                                                stroke-linecap="round" stroke-linejoin="round" />
-                                                        </g>
-                                                        <defs>
-                                                            <clipPath >
-                                                                <rect width="20" height="20" fill="white"
-                                                                    transform="translate(0 0.684082)" />
-                                                            </clipPath>
-                                                        </defs>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="box-product">
-                                                <div class="product-img avt-62 round">
-                                                    <img src="<?php echo $base_url.'assets/images/';?>shop/testimonials-item-3.jpg" alt="avt">
-                                                </div>
-                                                <div class="box-price">
-                                                    <p class="text-title  text-line-clamp-1"> <a href="product-detail.html"
-                                                            class="link">Contrasting sheepskin...</a></p>
-                                                    <div class="text-button price">$60.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="img-style">
-                                            <img data-src="<?php echo $base_url.'assets/images/';?>section/testimonials-3.jpg"
-                                                src="<?php echo $base_url.'assets/images/';?>section/testimonials-3.jpg" alt="img-testimonial">
-                                            <a href="#quickView" data-bs-toggle="modal" class="box-icon hover-tooltip center">
-                                                <span class="icon icon-eye"></span>
-                                                <span class="tooltip">Quick View</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php }?>
+
+                                  
+                                
+                                
+                               
                             </div>
                             <div
                                 class="sw-pagination-testimonial sw-dots d-block d-md-none type-circle d-flex justify-content-center">
@@ -851,7 +750,7 @@
             </div>
         </section><!-- /.testimonials -->
 
-        <section class="flat-spacing-2">
+        <!--<section class="flat-spacing-2">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -957,7 +856,9 @@
                     </div>
                 </div>
             </div>
-        </section><!-- news-insight -->
+        </section>-->
+        
+        <!-- news-insight -->
 
         <section class="flat-spacing-2 pt-0">
             <div class="container">

@@ -12,7 +12,9 @@
     <!-- font -->
     <link rel="stylesheet" href="<?php echo $base_url.'assets/';?>fonts/fonts.css">
     <!-- Icons -->
-    <script src="https://kit.fontawesome.com/6384d0908a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="<?php echo $base_url.'library/';?>fontawesome/css/fontawesome.css">
+    <link href="<?php echo $base_url.'library/';?>fontawesome/css/solid.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="<?php echo $base_url.'assets/';?>fonts/font-icons.css">
     <link rel="stylesheet" href="<?php echo $base_url.'assets/';?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $base_url.'assets/';?>css/swiper-bundle.min.css">

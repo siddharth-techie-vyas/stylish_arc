@@ -463,7 +463,7 @@
                                                         </div>
                                                         <div class="card-product-info ">
                                                             <a href="#" class=" text-title title link"><?php echo $random_pro2[$row3]['product_name'];?></a>
-                                                            <div class="price text-body-default "><i class="fa fa-inr"></i> <?php echo $random_pro2[$row3]['inr'];?></div>
+                                                            <div class="price text-body-default "><i class="fa-duotone fa-thin fa-dog"></i> <?php echo $random_pro2[$row3]['inr'];?></div>
                                                             <ul class="list-color-product">
                                                                 <li class="list-color-item color-swatch active">
                                                                     <span class="d-none text-capitalize color-filter"><?php echo $random_pro2[$row3]['color'];?></span>

@@ -6,7 +6,7 @@
 	//=================local
 	//$base_url="http://localhost/stylish_arc/";
 //-------------online
-	$base_url="https://www.stylisharc.com/";
+	$base_url="https://stylisharc.com/";
 
 	session_start();
 	//create a new function to check if the session variable member_id is on set

@@ -13,7 +13,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="title">About Us</h3>
+                            <h3 class="title">Contact Us</h3>
                             <ul class="breadcrumb">
                                 <li><a href="<?php echo $base_url;?>">Homepage</a></li>
                                 <li>Pages</li>

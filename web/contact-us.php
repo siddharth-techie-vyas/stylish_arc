@@ -2,11 +2,30 @@
         <div class="main-content">
 
             <!-- map -->
-            <div class="wrap-map">
-                <div id="map-contact" class="map-contact h590" data-map-zoom="16" data-map-scroll="true"></div>
+            <!-- <div class="wrap-map">
+                
+            </div> -->
+            
+            <div class="page-title relative">
+            <div class="paralaximg" data-parallax="scroll" data-image-src="<?php echo $base_url.'assets/images/bg-texture.jpg';?>">
             </div>
-            <!-- /map -->
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="title">About Us</h3>
+                            <ul class="breadcrumb">
+                                <li><a href="<?php echo $base_url;?>">Homepage</a></li>
+                                <li>Pages</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.page-title -->
 
+        
             <section class="flat-spacing">
                 <div class="container">
                     <div class="contact-us-content">

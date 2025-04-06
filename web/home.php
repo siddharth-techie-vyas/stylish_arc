@@ -11,7 +11,7 @@
                     <div class="swiper-slide">
                         <div class="wrap-slider slide-1">
                             <div class="img-style">
-                                <?php if(file_exists($base_url.'assets/images/'.$slider[$row]['value1'])){?>
+                                <?php if(!file_exists($base_url.'assets/images/'.$slider[$row]['value1'])){?>
                                 <img class="lazyload" data-src="<?php echo $base_url.'assets/images/'.$slider[$row]['value1'];?>"
                                     src="<?php echo $base_url.'assets/images/'.$slider[$row]['value1'];?>" alt="banner-cls">
                                 <?php } else{?>
@@ -88,7 +88,7 @@
                             <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
                                 <div class="card-product-wrapper">
                                     <a href="#" class="image-wrap">
-                                        <?php if(file_exists($base_url.'assets/images/'.$random_pro[$row2]['picture'])){?>
+                                        <?php if(!file_exists($base_url.'assets/images/'.$random_pro[$row2]['picture'])){?>
                                         <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/'.$random_pro[$row2]['picture'];?>"
                                             src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row2]['product_name'];?>">
 
@@ -445,7 +445,7 @@
                                                     <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
                                                         <div class="card-product-wrapper">
                                                             <a href="product-detail.html" class="image-wrap">
-                                                            <?php if(file_exists($base_url.'assets/images/'.$random_pro2[$row3]['picture'])){ ?>
+                                                            <?php if(!file_exists($base_url.'assets/images/'.$random_pro2[$row3]['picture'])){ ?>
                                                                 <img class="lazyload img-product"
                                                                     data-src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>"
                                                                     src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>" alt="image-product">
@@ -726,7 +726,7 @@
                                                 <div class="product-img avt-62 round">
                                                     <?php 
                                                     $proone=$product->getone($testimonails[$r]['pid']);
-                                                    if(!file_exists($base_url.'assets/images/'.$proone[0]['picture'])){?>
+                                                    if(!!file_exists($base_url.'assets/images/'.$proone[0]['picture'])){?>
                                                         <img src="<?php echo $base_url.'assets/images/'.$proone[0]['picture'];?>" alt="stylish arc- customer testimonials - <?php echo $base_url.'assets/images/'.$proone[0]['product_name'];?>">
                                                         <?php } else{?>
                                                     <img src="<?php echo $base_url.'assets/images/noimage_found.jpg';?>"/>

@@ -30,8 +30,21 @@
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Shipping Mark></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="shipping_mark"  >
+                         <label class="col-form-label">Product Category</label>
+                           <select name="cat" class="form-control" id="cat">
+                            <option disabled="disabled" selected="selected">--Select--</option>
+                            <?php $pro=$product->get_category_all(); foreach($pro as $k=>$value){ 
+                              
+                              echo "<option disabled='disabled' style='color:#FFF; background:#000;' value='".$pro[$k]['id']."'>".$pro[$k]['cat']."</option>";
+                              //-------- get sub category
+                              $sub=$product->get_subcategory_all($pro[$k]['id']);
+                              foreach($sub as $k1=>$value1){
+                                echo "<option value='".$sub[$k1]['id']."'>".$sub[$k1]['subcat']."</option>";
+                              }
+                            
+                            }?>  
+
+                           </select>
                          </div>
                          
                     </div>

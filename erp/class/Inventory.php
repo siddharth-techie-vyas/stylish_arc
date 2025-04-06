@@ -248,5 +248,13 @@ private $db_handle;
         $result = $this->db_handle->runBaseQuery($sql);
         return $result;
     }
+
+    function get_product_grid($id)
+    {
+        $sql = "select * FROM products where cat='$id' Order by id DESC LIMIT 0, 16 ";
+        $result = $this->db_handle->runBaseQuery($sql);
+        return $result;
+ 
+    }
 }
 ?>

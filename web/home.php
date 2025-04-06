@@ -11,8 +11,12 @@
                     <div class="swiper-slide">
                         <div class="wrap-slider slide-1">
                             <div class="img-style">
+                                <?php if(file_exists($base_url.'assets/images/'.$slider[$row]['value1'])){?>
                                 <img class="lazyload" data-src="<?php echo $base_url.'assets/images/'.$slider[$row]['value1'];?>"
                                     src="<?php echo $base_url.'assets/images/'.$slider[$row]['value1'];?>" alt="banner-cls">
+                                <?php } else{?>
+                                    <img src="<?php echo $base_url.'assets/images/noimage_found.jpg';?>"/>
+                                <?php }?>    
                             </div>
                             <div class="box-content">
                                 <div class="box-title">
@@ -84,7 +88,7 @@
                             <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
                                 <div class="card-product-wrapper">
                                     <a href="#" class="image-wrap">
-                                        <?php if(!file_exists($base_url.'assets/images/'.$random_pro[$row2]['picture'])){?>
+                                        <?php if(file_exists($base_url.'assets/images/'.$random_pro[$row2]['picture'])){?>
                                         <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/'.$random_pro[$row2]['picture'];?>"
                                             src="<?php echo $base_url.'assets/images/'.$random_pro[$row1]['picture'];?>" alt="<?php echo $random_pro[$row2]['product_name'];?>">
 
@@ -441,12 +445,16 @@
                                                     <div class="card-product style-1 wow fadeInUp" data-wow-delay="0s">
                                                         <div class="card-product-wrapper">
                                                             <a href="product-detail.html" class="image-wrap">
+                                                            <?php if(file_exists($base_url.'assets/images/'.$random_pro2[$row3]['picture'])){ ?>
                                                                 <img class="lazyload img-product"
                                                                     data-src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>"
                                                                     src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>" alt="image-product">
                                                                 <img class="lazyload img-hover"
                                                                     data-src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>"
                                                                     src="<?php echo $base_url.'assets/images/'.$random_pro2[$row3]['picture'];?>" alt="image-product">
+                                                            <?php } else{?>
+                                                                <img src="<?php echo $base_url.'assets/images/noimage_found.jpg';?>"/>
+                                                            <?php }?>
                                                             </a>
                                                             <!-- <div class="list-product-btn">
                                                                 <a href="javascript:void(0);"

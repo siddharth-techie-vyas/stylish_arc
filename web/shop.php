@@ -197,8 +197,10 @@
                             <li><a href="#" class="pagination-item text-button">3</a></li>
                             <li><a href="#" class="pagination-item text-button"><i class="icon-right"></i></a></li>
                         </ul>
-                        <?php }else{include('404.php');}?>
+                        
                     </div>
+
+                    <?php }else{include('404.php');}?>
                 </div>
             </div>
         </section>

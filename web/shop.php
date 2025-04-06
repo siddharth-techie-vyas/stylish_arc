@@ -12,6 +12,7 @@
                             <ul class="breadcrumb">
                                 <li><a href="<?php echo $base_url;?>">Homepage</a></li>
                                 <li>Shop</li>
+                                <li><?php echo $_GET['subcategory'];?></li>
                             </ul>
                         </div>
                     </div>
@@ -131,7 +132,7 @@
                         ?>
                         <div class="card-product style-1 grid" data-availability="Out of stock" data-brand="adidas">
                             <div class="card-product-wrapper">
-                                <a href="<?php echo $base_url.'index.php?action=dashboard&page=product-detail&product_id='.$v['id'].'&product-name='.$v['product_name'];?>" class="image-wrap">
+                                <a href="<?php echo $base_url.'index.php?action=dashboard&page=product-detail&product_id='.$v['id'].'&product-name='.$v['product_name'].'&category='.$_GET['subcategory'];?>" class="image-wrap">
                                     <?php if(!file_exists($base_url.'assets/images/'.$v['picture'])){?>
                                     <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/'.$v['picture']; ?>"
                                         src="<?php echo $base_url.'assets/images/'.$v['picture']; ?>" alt="image-product">
@@ -164,7 +165,7 @@
                                 </div>
                             </div>
                             <div class="card-product-info ">
-                                <a href="<?php echo $base_url.'index.php?action=dashboard&page=product-detail&product_id='.$v['id'].'&product-name='.$v['product_name'];?>" class="title link"><?php echo $v['product_name'];?></a>
+                                <a href="<?php echo $base_url.'index.php?action=dashboard&page=product-detail&product_id='.$v['id'].'&product-name='.$v['product_name'].'&category='.$_GET['subcategory'];?>" class="title link"><?php echo $v['product_name'];?></a>
                                 <div class="price text-body-default ">
                                     <!-- <span class="text-caption-1 old-price"><?php echo $v['inr'];?></span> -->
                                     <span class="current-price"><i class="fa fa-inr"></i> <?php echo $v['inr'];?></span>
@@ -185,7 +186,7 @@
                                 </ul> -->
                             </div>
                         </div>
-                        <?php }}else{include('404.php');}?>
+                        <?php }?>
                         
                         <!-- pagination -->
                         <ul class="wg-pagination justify-content-center">
@@ -196,6 +197,7 @@
                             <li><a href="#" class="pagination-item text-button">3</a></li>
                             <li><a href="#" class="pagination-item text-button"><i class="icon-right"></i></a></li>
                         </ul>
+                        <?php }else{include('404.php');}?>
                     </div>
                 </div>
             </div>

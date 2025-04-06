@@ -141,22 +141,22 @@
                                 <div class="tf-payment">
                                     <ul>
                                         <li>
-                                            <img src="images/payment/payment-1.png" alt="">
+                                            <img src="<?php echo $base_url.'assets/';?>images/payment-1.png" alt="">
                                         </li>
                                         <li>
-                                            <img src="images/payment/payment-2.png" alt="">
+                                            <img src="<?php echo $base_url.'assets/';?>images/payment-2.png" alt="">
                                         </li>
                                         <li>
-                                            <img src="images/payment/payment-3.png" alt="">
+                                            <img src="<?php echo $base_url.'assets/';?>images/payment-3.png" alt="">
                                         </li>
                                         <li>
-                                            <img src="images/payment/payment-4.png" alt="">
+                                            <img src="<?php echo $base_url.'assets/';?>images/payment-4.png" alt="">
                                         </li>
                                         <li>
-                                            <img src="images/payment/payment-5.png" alt="">
+                                            <img src="<?php echo $base_url.'assets/';?>images/payment-5.png" alt="">
                                         </li>
                                         <li>
-                                            <img src="images/payment/payment-6.png" alt="">
+                                            <img src="<?php echo $base_url.'assets/';?>images/payment-6.png" alt="">
                                         </li>
                                     </ul>
                                 </div>
@@ -2163,6 +2163,21 @@
     </div>
     <!-- /size-guide -->
 
+
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67dfcd104a91d21911f80860/1in13i2t4';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
     <!-- Javascript -->
     <script type="text/javascript" src="<?php echo $base_url.'assets/';?>js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo $base_url.'assets/';?>js/jquery.min.js"></script>
@@ -2178,10 +2193,4 @@
 </body>
 
 
-<!--
-Application and version: A1 Website Download version 12.0.0 update #4 (Windows)
-Page saved to disk at ISO datetime: 2025-01-15 18:12:18
-Original URL: https://themesflat.co/html/oriya/
-Relative path on disk: index.html
--->
 </html>

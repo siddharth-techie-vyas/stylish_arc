@@ -30,21 +30,8 @@
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Product Category</label>
-                           <select name="cat" class="form-control" id="cat">
-                            <option disabled="disabled" selected="selected">--Select--</option>
-                            <?php $pro=$product->get_category_all(); foreach($pro as $k=>$value){ 
-                              
-                              echo "<option disabled='disabled' style='color:#FFF; background:#000;' value='".$pro[$k]['id']."'>".$pro[$k]['cat']."</option>";
-                              //-------- get sub category
-                              $sub=$product->get_subcategory_all($pro[$k]['id']);
-                              foreach($sub as $k1=>$value1){
-                                echo "<option value='".$sub[$k1]['id']."'>".$sub[$k1]['subcat']."</option>";
-                              }
-                            
-                            }?>  
-
-                           </select>
+                         <label class="col-form-label">Shipping Mark></label>
+                           <input type="text" value="" class="form-control form-control-sm" name="shipping_mark"  >
                          </div>
                          
                     </div>
@@ -140,7 +127,7 @@
                          
                     <!--- last row -->
                     <div class="form-group row">
-                    <div class="col-sm-6 col-md-3">
+                        <div class="col-sm-3 col-md-3">
                          <label class="col-form-label">L Shape</label>
                          <select class="form-control" name="lshape">
                             <option disabled="disabled" selected="selected">--Selected--</option>
@@ -150,8 +137,8 @@
                          </div>
 
                     <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Picture</label>
-                           <input type="file" class="form-control form-control-sm" name="picture" accept="image/png, image/jpeg, image/jpg"  >
+                         <label class="col-form-label">Picture<span class="mendetory">*</span></label>
+                           <input type="file" class="form-control form-control-sm" name="picture" accept="image/png, image/jpeg, image/jpg"  required>
                          </div>     
 
                     <div class="col-sm-2"><br>
@@ -163,14 +150,15 @@
                          </button>
                          </div>  
                     
-                      <div class="col-sm-2"><br>
-                         <button type="submit" name="submit" class="btn btn-success btn-icon-split">
-                           <span class="icon text-white-50">
-                             <i class="fas fa-check"></i>
-                           </span>
-                           <span class="text">Submit</span>
-                         </button>
-                         </div>
+                        <div class="col-sm-2"><br>
+                          <button type="submit" name="submit" class="btn btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                              <i class="fas fa-check"></i>
+                            </span>
+                            <span class="text">Submit</span>
+                          </button>
+                          </div>
+                      </div>
                     </div>
                   </form>  
 

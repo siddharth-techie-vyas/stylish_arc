@@ -215,7 +215,12 @@ function get_random_product()
     return $result;
 }
 
-
+function get_testimonials_limit($limit)
+{
+    $query = "select * from testimonials ORDER by RAND() LIMIT $limit";
+    $result = $this->db_handle->runBaseQuery($query);
+    return $result;
+}
 //===========class end 
 }
 

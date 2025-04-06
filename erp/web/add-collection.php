@@ -62,7 +62,10 @@
                   <th><?php echo $counter++;?></th>
                   <td><?php echo $viewall[$key]['cat'];?></td>
                   <td><img src="<?php echo '../assets/images/'.$viewall[$key]['image'];?>" width="100"></td>
-                  <td><i class="btn btn-danger fa fa-trash" onclick="deleteme('product','delete-collection','<?php echo $viewall[$key]['id'];?>')"></i></td>
+                  <td>
+                    <i class="btn btn-danger fa fa-trash" onclick="deleteme('product','delete-collection','<?php echo $viewall[$key]['id'];?>')"></i>
+                    <a href="<?php echo $base_url.'index.php?action=dashboard&page=add-collection&id='.$viewall[$key]['id'];?>" class="btn btn-danger fa fa-trash" onclick="deleteme('product','delete-collection','<?php echo $viewall[$key]['id'];?>')"></a>
+                  </td>
                 </tr>
                 <?php } ?>
               </tbody>

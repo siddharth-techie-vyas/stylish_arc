@@ -54,13 +54,13 @@ private $db_handle;
     }
     //----------products
 
-	function save($picture, $buyer_code, $sku_code, $cat, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $exinr, $inr, $pcs_cartoon, $cartoon_per_pcs, $picture2)
+	function save($picture, $buyer_code, $sku_code, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $cat, $exinr, $inr, $pcs_cartoon, $cartoon_per_pcs, $lshape)
     {
 
-        $fob = number_format((float)$fob, 2, '.', '');
-        $query = "INSERT INTO products(picture, buyer_code, sku_code, cat, product_name, hsn_code, width,length,height,gross_cbm,color,assembly, exinr, inr, pcs_cartoon, cartoon_per_pcs, picture_gallery)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $exinr = number_format((float)$exinr, 2, '.', '');
+        $query = "INSERT INTO products(picture, buyer_code, sku_code, product_name, hsn_code, width, length, height, gross_cbm, color, assembly, cat, exinr, inr, pcs_cartoon, cartoon_per_pcs, lshape)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $paramType = "sssssssssssssssss";
-        $paramValue = array($picture, $buyer_code, $sku_code, $cat, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $exinr, $inr, $pcs_cartoon, $cartoon_per_pcs, $picture2 );
+        $paramValue = array($picture, $buyer_code, $sku_code, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $cat, $exinr, $inr, $pcs_cartoon, $cartoon_per_pcs, $lshape);
         
         $this->db_handle->insert($query, $paramType, $paramValue);
 

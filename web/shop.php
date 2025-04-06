@@ -132,10 +132,15 @@
                         <div class="card-product style-1 grid" data-availability="Out of stock" data-brand="adidas">
                             <div class="card-product-wrapper">
                                 <a href="<?php echo $base_url.'index.php?action=dashboard&page=product-detail&product_id='.$v['id'].'&product-name='.$v['product_name'];?>" class="image-wrap">
+                                    <?php if(file_exists($base_url.'assets/images/'.$v['picture'])){?>
                                     <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/'.$v['picture']; ?>"
                                         src="<?php echo $base_url.'assets/images/'.$v['picture']; ?>" alt="image-product">
                                     <img class="lazyload img-hover" data-src="<?php echo $base_url.'assets/images/'.$v['picture']; ?>"
                                         src="<?php echo $base_url.'assets/images/'.$v['picture']; ?>" alt="image-product">
+                                    <?php }else{?>
+                                        <img class="lazyload img-product" data-src="<?php echo $base_url.'assets/images/no-image.png'; ?>"
+                                        src="<?php echo $base_url.'assets/images/no-image.png'; ?>" alt="image-product">
+                                    <?php }?>         
                                 </a>
                                 <div class="list-product-btn">
                                     <a href="javascript:void(0);" class="box-icon wishlist btn-icon-action">

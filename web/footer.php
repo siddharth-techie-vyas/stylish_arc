@@ -2163,10 +2163,9 @@
     </div>
     <!-- /size-guide -->
 
-
-<!--Add the following script at the bottom of the web page (before </body></html>)-->
-<script type="text/javascript">function add_chatinline(){var hccid=85459101;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
-add_chatinline();</script>
+<!-- live chat -->
+<script type="text/javascript">function add_chatwidget(){var hccid=85459101;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatwidget.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatwidget();</script>
 
 
 

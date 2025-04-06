@@ -99,7 +99,7 @@
                          <div class="col-sm-6 col-md-3">
                          <label class="col-form-label">Collection</label>
                          <select name="collection" class="form-control" id="collection">
-                            <option disabled="disabled" selected="selected">--Select--</option>
+                            <option value="" selected="selected">--Select--</option>
                             <?php $collection=$product->get_collection_all(); foreach($collection as $k=>$value){ 
                               
                               echo "<option value='".$collection[$k]['id']."'>".$collection[$k]['cat']."</option>";

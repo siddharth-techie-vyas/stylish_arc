@@ -60,8 +60,23 @@ $default_weight =$admin->get_metaname_byvalue('default_weight');
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Shipping Mark</label>
-                           <input type="text" value="<?php echo $edit[0]['shipping_mark'];?>" class="form-control form-control-sm" name="shipping_mark" >
+                         <label class="col-form-label">Product Category</label>
+                           <select name="cat" class="form-control" id="cat">
+                            <option disabled="disabled" selected="selected">--Select--</option>
+                            <?php $pro=$product->get_category_all(); foreach($pro as $k=>$value){ 
+                              
+                              echo "<option disabled='disabled' style='color:#FFF; background:#000;' value='".$pro[$k]['id']."'>".$pro[$k]['cat']."</option>";
+                              //-------- get sub category
+                              $sub=$product->get_subcategory_all($pro[$k]['id']);
+                              foreach($sub as $k1=>$value1){
+                                if($sub[$k1]['id']==$edit[0]['cat']){$selected="selected='selected'";}
+                                else{$selected="";}
+                                echo "<option value='".$sub[$k1]['id']."' $selected>".$sub[$k1]['subcat']."</option>";
+                              }
+                            
+                            }?>  
+
+                           </select>
                          </div>
                          
                     </div>
@@ -113,9 +128,17 @@ $default_weight =$admin->get_metaname_byvalue('default_weight');
                             </select>  
                           </div>
 
-                         <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Case Number</label>
-                           <input type="text" value="<?php echo $edit[0]['case_number'];?>" class="form-control form-control-sm" name="case_number">
+                          <div class="col-sm-6 col-md-3">
+                         <label class="col-form-label">Collection</label>
+                         <select name="collection" class="form-control" id="collection">
+                            <option disabled="disabled" selected="selected">--Select--</option>
+                            <?php $collection=$product->get_collection_all(); foreach($collection as $k=>$value){ 
+                              if($collection[$k]['id']==$edit[0]['collection']){$selected="selected='selected'";}
+                              else{$selected="";}
+                              echo "<option value='".$collection[$k]['id']."' $selected>".$collection[$k]['cat']."</option>";
+                              }?>  
+
+                           </select>
                          </div>
                          
                     </div>
@@ -123,17 +146,15 @@ $default_weight =$admin->get_metaname_byvalue('default_weight');
                     <!-- row 4-->
                     <div class="form-group row">
                          
-                         <!-- <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">FOB<span class="mendetory">*</span></label>
-                           <input type="text" value="<?php echo $edit[0]['fob'];?>" class="form-control form-control-sm" name="fob"  required>
-                         </div> -->
+                         <div class="col-sm-6 col-md-3">
+                         <label class="col-form-label">Ex Showroom Price<span class="mendetory">*</span></label>
+                           <input type="text" value="<?php echo $edit[0]['exinr'];?>" class="form-control form-control-sm" name="exinr"  required>
+                         </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">FOB Price($)<span class="mendetory">*</span></label>
+                         <label class="col-form-label">Price<span class="mendetory">*</span></label>
                          <!-- to do place fob somewhere not to use -->
-                         <input type="text" value="<?php echo $edit[0]['fob'];?>" class="form-control form-control-sm" name="fob"  required>
-
-                           <input type="hidden" value="<?php echo $edit[0]['usd'];?>" class="form-control form-control-sm" name="usd"  required>
+                         <input type="text" value="<?php echo $edit[0]['inr'];?>" class="form-control form-control-sm" name="inr"  required>
                          </div>
 
                          <div class="col-sm-6 col-md-3">
@@ -146,15 +167,21 @@ $default_weight =$admin->get_metaname_byvalue('default_weight');
                            <input type="text" value="<?php echo $edit[0]['pcs_cartoon'];?>" class="form-control form-control-sm" name="pcs_cartoon"  required>
                          </div>
                          
-                         <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">L Shape<span class="mendetory">*</span></label>
-                           <input type="text" value="<?php echo $edit[0]['l_shape'];?>" class="form-control form-control-sm" name="lshape"  required>
-                         </div>
+                        
+                         
                     </div>
                          
                     <!--- last row -->
                     <div class="form-group row">
-                    
+                      
+                    <div class="col-sm-6 col-md-3">
+                         <label class="col-form-label">L Shape</label>
+                         <select class="form-control" name="lshape">
+                            <option disabled="disabled" selected="selected">--Selected--</option>
+                            <option value="yes" <?php if($edit[0]['lshape']=='yes'){?>selected='selected'<?php }?>>Yes</option>
+                            <option value="no"  <?php if($edit[0]['lshape']=='no'){?>selected='selected'<?php }?>>No</option>
+                            </select> 
+                         </div>
 
                     <div class="col-sm-6 col-md-3">
                          <label class="col-form-label">Picture</label>

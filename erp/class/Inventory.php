@@ -54,13 +54,13 @@ private $db_handle;
     }
     //----------products
 
-	function save($picture, $buyer_code, $sku_code, $shipping_mark, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $case_number, $fob, $usd, $pcs_cartoon, $cartoon_per_pcs, $l_shape)
+	function save($picture, $buyer_code, $sku_code, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $cat, $exinr, $inr, $pcs_cartoon, $cartoon_per_pcs, $l_shape)
     {
 
-        $fob = number_format((float)$fob, 2, '.', '');
-        $query = "INSERT INTO products(picture, buyer_code, sku_code, shipping_mark, product_name, hsn_code, width,length,height,gross_cbm,color,assembly,case_number, fob, usd, pcs_cartoon, cartoon_per_pcs, l_shape)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        $paramType = "ssssssssssssssssss";
-        $paramValue = array($picture, $buyer_code, $sku_code, $shipping_mark, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $case_number, $fob, $usd, $pcs_cartoon, $cartoon_per_pcs, $l_shape);
+        $exinr = number_format((float)$exinr, 2, '.', '');
+        $query = "INSERT INTO products(picture, buyer_code, sku_code, product_name, hsn_code, width,length,height,gross_cbm,color,assembly,cat, exinr, inr, pcs_cartoon, cartoon_per_pcs, l_shape)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $paramType = "sssssssssssssssss";
+        $paramValue = array($picture, $buyer_code, $sku_code, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $cat, $exinr, $inr, $pcs_cartoon, $cartoon_per_pcs, $l_shape);
         
         $this->db_handle->insert($query, $paramType, $paramValue);
 
@@ -145,9 +145,9 @@ private $db_handle;
         $this->db_handle->insert($query, $paramType, $paramValue);
     }
 	
-	function update($picture, $buyer_code, $sku_code, $shipping_mark, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $case_number, $fob, $usd, $pcs_cartoon, $cartoon_per_pcs, $lshape, $id)
+	function update($picture, $buyer_code, $sku_code, $shipping_mark, $product_name, $hsn_code, $width, $length, $height, $gross_cbm, $color, $assembly, $cat, $exinr, $inr, $pcs_cartoon, $cartoon_per_pcs, $lshape, $id)
     {
-        $query = "update products SET picture='$picture',buyer_code='$buyer_code',sku_code='$sku_code',shipping_mark='$shipping_mark',product_name='$product_name',hsn_code='$hsn_code',width='$width',length='$length',height='$height',gross_cbm='$gross_cbm' ,color='$color',assembly='$assembly',case_number='$case_number',fob='$fob',usd='$usd',pcs_cartoon='$pcs_cartoon',cartoon_per_pcs='$cartoon_per_pcs',l_shape='$lshape' where id='$id' ";
+        $query = "update products SET picture='$picture',buyer_code='$buyer_code',sku_code='$sku_code',shipping_mark='$shipping_mark',product_name='$product_name',hsn_code='$hsn_code',width='$width',length='$length',height='$height',gross_cbm='$gross_cbm' ,color='$color',assembly='$assembly',cat='$cat',exinr='$exinr',inr='$inr',pcs_cartoon='$pcs_cartoon',cartoon_per_pcs='$cartoon_per_pcs',l_shape='$lshape' where id='$id' ";
         $insertId = $this->db_handle->update($query);
     	return $insertId;
     }   

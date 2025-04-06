@@ -15,8 +15,8 @@
                        <div class="form-group row">
                          
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Product Name <span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="product_name"  required>
+                         <label class="col-form-label">Product Name </label>
+                           <input type="text" value="" class="form-control form-control-sm" name="product_name"  >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
@@ -25,13 +25,26 @@
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Sku Code<span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="sku_code"  required>
+                         <label class="col-form-label">Sku Code</label>
+                           <input type="text" value="" class="form-control form-control-sm" name="sku_code"  >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Shipping Mark></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="shipping_mark"  >
+                         <label class="col-form-label">Product Category</label>
+                           <select name="cat" class="form-control" id="cat">
+                            <option disabled="disabled" selected="selected">--Select--</option>
+                            <?php $pro=$product->get_category_all(); foreach($pro as $k=>$value){ 
+                              
+                              echo "<option disabled='disabled' style='color:#FFF; background:#000;' value='".$pro[$k]['id']."'>".$pro[$k]['cat']."</option>";
+                              //-------- get sub category
+                              $sub=$product->get_subcategory_all($pro[$k]['id']);
+                              foreach($sub as $k1=>$value1){
+                                echo "<option value='".$sub[$k1]['id']."'>".$sub[$k1]['subcat']."</option>";
+                              }
+                            
+                            }?>  
+
+                           </select>
                          </div>
                          
                     </div>
@@ -40,23 +53,23 @@
                     <div class="form-group row">
                          
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Hsn Code<span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="hsn_code" required>
+                         <label class="col-form-label">Hsn Code</label>
+                           <input type="number" value="" class="form-control form-control-sm" name="hsn_code" >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                          <label class="col-form-label">Width<span class="mendetory">*</span></label>
-                           <input type="text"  class="form-control form-control-sm" name="width" id="width" onkeyup="cbm()"  required>
+                          <label class="col-form-label">Width</label>
+                           <input type="number" step=".01" class="form-control form-control-sm" name="width" id="width" onkeyup="cbm()"  >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                          <label class="col-form-label">Length<span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="length" id="length" onkeyup="cbm()" required>
+                          <label class="col-form-label">Length</label>
+                           <input type="number" step=".01" value="" class="form-control form-control-sm" name="length" id="length" onkeyup="cbm()" >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                           <label class="col-form-label">Height<span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="height" id="height" onkeyup="cbm()"  required>
+                           <label class="col-form-label">Height</label>
+                           <input type="number" step=".01" value="" class="form-control form-control-sm" name="height" id="height" onkeyup="cbm()"  >
                          </div>
                          
                     </div>
@@ -65,17 +78,17 @@
                     <div class="form-group row">
                          
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Gross Cbm<span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="gross_cbm"  id='cbm' required>
+                         <label class="col-form-label">Gross Cbm</label>
+                           <input type="text" value="" class="form-control form-control-sm" name="gross_cbm"  id='cbm' >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Color<span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="color"  required>
+                         <label class="col-form-label">Color</label>
+                           <input type="text" value="" class="form-control form-control-sm" name="color"  >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Assembly></label>
+                         <label class="col-form-label">Assembly</label>
                            <select class="form-control" name="assembly" >
                             <option disabled="disabled" selected="selected">--Selected--</option>
                             <option value="yes">Yes</option>
@@ -84,8 +97,18 @@
                           </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Case Number</label>
-                           <input type="text" value="" class="form-control form-control-sm" name="case_number">
+                         <label class="col-form-label">Collection</label>
+                         <select name="collection" class="form-control" id="collection">
+                            <option disabled="disabled" selected="selected">--Select--</option>
+                            <?php $collection=$product->get_collection_all(); foreach($collection as $k=>$value){ 
+                              
+                              echo "<option value='".$collection[$k]['id']."'>".$collection[$k]['cat']."</option>";
+                             
+                              
+                            
+                            }?>  
+
+                           </select>
                          </div>
                          
                     </div>
@@ -94,13 +117,13 @@
                     <div class="form-group row">
                          
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">FOB<span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="fob"  required>
+                         <label class="col-form-label">Ex Showroom Price</label>
+                           <input type="text" value="" class="form-control form-control-sm" name="exinr"  >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">USD Price (Ex-factory)<span class="mendetory">*</span></label>
-                           <input type="text" value="" class="form-control form-control-sm" name="usd"  required>
+                         <label class="col-form-label">Price (without GST)</label>
+                           <input type="text" value="" class="form-control form-control-sm" name="inr"  >
                          </div>
 
                          <div class="col-sm-6 col-md-3">
@@ -127,8 +150,8 @@
                          </div>
 
                     <div class="col-sm-6 col-md-3">
-                         <label class="col-form-label">Picture<span class="mendetory">*</span></label>
-                           <input type="file" class="form-control form-control-sm" name="picture" accept="image/png, image/jpeg, image/jpg"  required>
+                         <label class="col-form-label">Picture</label>
+                           <input type="file" class="form-control form-control-sm" name="picture" accept="image/png, image/jpeg, image/jpg"  >
                          </div>     
 
                     <div class="col-sm-2"><br>
